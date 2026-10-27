@@ -1,8 +1,18 @@
 const express = require('express');
 const app = express();
 
+// Datos de ejemplo en memoria
+const contenedores = [
+  { id: 1, nombre: "CONT-001", tipo: "vidrio", ubicacion: "Calle Mayor, 12",
+    capacidad: 120, llenado: 76, fechaInstalacion: "2026-10-20",
+    color: "#2e7d32", estado: "operativo" },
+  { id: 2, nombre: "CONT-002", tipo: "plastico", ubicacion: "Plaza Mayor",
+    capacidad: 240, llenado: 40, fechaInstalacion: "2026-10-21",
+    color: "#1565c0", estado: "operativo" }
+];
+
 app.get('/api/contenedores', (req, res) => {
-  res.send('API de contenedores funcionando');
+  res.json(contenedores);
 });
 
 app.listen(3000, () => {
