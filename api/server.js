@@ -15,6 +15,16 @@ app.get('/api/contenedores', (req, res) => {
   res.json(contenedores);
 });
 
+// Consultar un contenedor por su id
+app.get('/api/contenedores/:id', (req, res) => {
+  const id = Number(req.params.id);
+  const contenedor = contenedores.find(c => c.id === id);
+  if (!contenedor) {
+    return res.status(404).json({ error: 'Contenedor no encontrado' });
+  }
+  res.json(contenedor);
+});
+
 app.listen(3000, () => {
   console.log('API en http://localhost:3000');
 });
