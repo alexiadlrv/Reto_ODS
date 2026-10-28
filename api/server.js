@@ -57,6 +57,28 @@ app.post('/api/contenedores', (req, res) => {
   res.status(201).json(nuevo);
 });
 
+// Editar un contenedor existente
+app.put('/api/contenedores/:id', (req, res) => {
+  const id = Number(req.params.id);
+  const contenedor = contenedores.find(c => c.id === id);
+
+  if (!contenedor) {
+    return res.status(404).json({ error: 'Contenedor no encontrado' });
+  }
+
+  const datos = req.body;
+  if (datos.nombre !== undefined) contenedor.nombre = datos.nombre;
+  if (datos.tipo !== undefined) contenedor.tipo = datos.tipo;
+  if (datos.ubicacion !== undefined) contenedor.ubicacion = datos.ubicacion;
+  if (datos.capacidad !== undefined) contenedor.capacidad = Number(datos.capacidad);
+  if (datos.llenado !== undefined) contenedor.llenado = Number(datos.llenado);
+  if (datos.fechaInstalacion !== undefined) contenedor.fechaInstalacion = datos.fechaInstalacion;
+  if (datos.color !== undefined) contenedor.color = datos.color;
+  if (datos.estado !== undefined) contenedor.estado = datos.estado;
+
+  res.json(contenedor);
+});
+
 app.listen(3000, () => {
   console.log('API en http://localhost:3000');
 });
