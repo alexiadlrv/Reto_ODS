@@ -6,9 +6,12 @@
 }
 body{
     font-family:Kalam;
-    color: #1e2b24;
-    background-color: #f4f8f5;
+    background-color: #1e2b24;
     line-height: 1.5;
+    min-height: 100vh;
+    display: flex;
+  flex-direction: column;
+  color: white  ;
 
    }
 html {
@@ -16,7 +19,14 @@ html {
 }
 
 
-
+/*----------------FOOOTER-------------------*/
+.footer{
+  text-align: center;
+  background-color: #1e2b24;
+ color: white;
+  font-size: 17px;
+  padding: 20px;
+}
 /* ---------- CABECERA ---------- */
 
 header{
@@ -31,9 +41,10 @@ header{
 
 }
 
-#logo{justify-content: center;}
+
+.logo{height: 20px;}
  span {
-  color: #3fd07f;
+  color: rgb(50, 230, 146);
 }
 
 #logo h2{color: white;
@@ -43,7 +54,7 @@ header{
 .menu{
     display: flex;
     gap: 30px ;
-    
+    list-style-type: none;
 }
 
 
@@ -51,10 +62,18 @@ header{
     color:white;
     font-size: 15px;
     display: block;
-    padding: 22px 0; 
-     text-decoration: none;
-     font-size: 17px;
+    padding: 22px;
+    text-decoration: none;
+    font-size: 17px;
+    
 }
+.menu li a:hover,
+.menu li a:focus-visible {
+  background-color: #1b4a30;
+  color: #3fd07f;
+}
+
+
 
 
 
@@ -69,21 +88,19 @@ header{
 }
 
 .portada-texto {
- position: absolute;
-
-}
-#texto{
+    position: absolute;
     text-align: left;
     width: 100%;
     max-width: 500px;
     margin: 100px;
-
+    position: absolute;
+    
 }
 
+
 .portada-imagen img {
- 
   width: 100%;
-  
+  display: block;
 }
 
 .etiqueta {
@@ -91,7 +108,7 @@ header{
   background-color: rgba(63, 208, 127, 0.2);
   border: 1px solid #3fd07f;
   color: #b9f3d2;
-  font-size: 13px;
+  font-size: 17px;
   padding: 4px 14px;
   border-radius: 20px;
   margin-bottom: 20px;
@@ -117,8 +134,69 @@ header{
   padding: 12px 24px;
   border-radius: 6px;
   font-weight: bold;
+  text-decoration: none;  
 }
 
 .boton:hover {
   background-color: #14683a;
+  
 }
+
+.ods{
+display: flex;
+flex-direction: column; 
+text-align: center;
+  background-color: #fff;
+
+}
+
+.ods h2{
+  padding: 20px;
+  color: #001c19;
+
+}
+
+.contenedores-ods{
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  margin  : 20px;
+  
+
+}
+.contenedores-ods img{
+  width: 200px;
+  border:2px solid beige;
+  margin-right: 20px;
+  
+}
+
+.buscador-contenedor{
+
+  padding: 20px;
+  text-align: left;
+  background: linear-gradient(to right, #001c19, transparent),  url(imagenes/fondobuscarcont.jpeg) no-repeat;
+  background-size: cover;
+  padding-left: 100px;
+  border-top: 2px solid #1c8a4e;
+}
+ 
+.buscador-contenedor p {
+    font-size: 15px;
+    color: #b8c5c0;
+    margin-bottom: 20px;
+}
+.iconobuscador{
+  width: 20px;
+}
+ 
+.titulo-con-icono {
+    display: flex;
+    align-items: center; /* Centra verticalmente el icono y el texto */
+    gap: 12px;           /* Espacio de separación entre el icono y el h2 */
+    margin-bottom: 10px;
+}
+/*-------------ODS------------*/
+
+
+
