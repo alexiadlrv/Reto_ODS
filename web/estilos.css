@@ -36,13 +36,13 @@ header{
     align-items: center;
     height: 64px;
     padding: 20px;
-     padding-left:100px;
+    padding-left:100px;
     padding-right: 200px;
 
 }
 
 
-.logo{height: 20px;}
+.logo{width: 30px;}
  span {
   color: rgb(50, 230, 146);
 }
@@ -135,6 +135,8 @@ header{
   border-radius: 6px;
   font-weight: bold;
   text-decoration: none;  
+  border-radius: 20px;
+  
 }
 
 .boton:hover {
@@ -142,35 +144,98 @@ header{
   
 }
 
-.ods{
-display: flex;
-flex-direction: column; 
-text-align: center;
-  background-color: #fff;
+/*-------------ODS-------------*/
 
-}
-
-.ods h2{
-  padding: 20px;
-  color: #001c19;
-
-}
-
-.contenedores-ods{
+.contenedorPadreODS {
   display: flex;
+  flex-direction: column;
+  background-color: #f8fafc; 
+  width: 100%;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+
+.tituloODS {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.tituloODS h2 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px 0;
+}
+
+.tituloODS p {
+  font-size: 15px;
+  color: #64748b;
+  margin: 0;
+}
+
+
+.contenedoresHijosods {
+  display: flex;
+  width: 100%;
+  gap: 16px;
+ 
+}
+
+
+.contenedores-ods {
+  display: flex;
+  width: 25%;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  gap: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); 
+}
+
+
+.imagen-contenedor {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 10px;
-  margin  : 20px;
-  
-
-}
-.contenedores-ods img{
-  width: 200px;
-  border:2px solid beige;
-  margin-right: 20px;
-  
+  flex-shrink: 0;
 }
 
+.imagen-contenedor img {
+  width: 80px;
+  height: 80px;
+  border-radius: 12px;
+ 
+}
+
+
+.texto-ods {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.texto-ods h2 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1e293b;
+
+}
+
+.texto-ods p {
+  font-size: 11px;
+  color: #64748b;
+  margin: 0;
+  line-height: 1.35;
+}
+
+
+
+.tituloODS{text-align: center;}
+/*------------Coontenedor buscador--------------------------*/
 .buscador-contenedor{
 
   padding: 20px;
@@ -179,24 +244,33 @@ text-align: center;
   background-size: cover;
   padding-left: 100px;
   border-top: 2px solid #1c8a4e;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;/*para  q no se estire el boton*/
+
 }
  
 .buscador-contenedor p {
     font-size: 15px;
     color: #b8c5c0;
     margin-bottom: 20px;
+  
 }
 .iconobuscador{
-  width: 20px;
+  width: 30px;
 }
  
-.titulo-con-icono {
+.iconoytitulo {
     display: flex;
-    align-items: center; /* Centra verticalmente el icono y el texto */
-    gap: 12px;           /* Espacio de separación entre el icono y el h2 */
-    margin-bottom: 10px;
+    align-items: center; 
+    gap:5px        
+   
+
 }
-/*-------------ODS------------*/
+.buscadortexto{
+  margin-left: 40px;
+}
+
 
 
 
