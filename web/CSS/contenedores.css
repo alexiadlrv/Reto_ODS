@@ -11,7 +11,7 @@ background-color: rgb(247, 252, 252);
 .contenedor-banner{
     height: 300px;
     width: 100%;
-    background:linear-gradient(to right, #002b27, transparent), url(multimedia/banner.png) no-repeat  ;
+    background:linear-gradient(to right, #002b27, transparent), url(../multimedia/banner.png) no-repeat  ;
     background-size: cover;
     background-position: center;
     display: flex;
