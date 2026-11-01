@@ -4,20 +4,16 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body{
-    font-family:Kalam;
-    background-color: #1e2b24;
-    line-height: 1.5;
-    min-height: 100vh;
-    display: flex;
+  font-family:Arial, Helvetica, sans-serif;
+  background-color: #1e2b24;
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
   flex-direction: column;
-  color: white  ;
-
-   }
-html {
-  scroll-behavior: smooth;
+  color: white;
 }
-
 
 /*----------------FOOOTER-------------------*/
 .footer{
@@ -30,15 +26,14 @@ html {
 /* ---------- CABECERA ---------- */
 
 header{
-    background-color: #0d2018;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 64px;
-    padding: 20px;
-    padding-left:100px;
-    padding-right: 200px;
-
+  background-color: #0d2018;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+  padding: 20px;
+  padding-left:100px;
+  padding-right: 200px;
 }
 
 
@@ -236,12 +231,13 @@ header{
 
 
 .tituloODS{text-align: center;}
+
 /*------------Coontenedor buscador--------------------------*/
 .buscador-contenedor{
 
   padding: 20px;
   text-align: left;
-  background: linear-gradient(to right, #315050, transparent),  url(imagenes/fondobuscarcont.jpeg) no-repeat;
+  background: linear-gradient(to right, #315050, transparent),  url(../multimedia/fondobuscarcont.jpeg) no-repeat;
   background-size: cover;
   padding-left: 100px;
   border-top: 2px solid #1c8a4e;
