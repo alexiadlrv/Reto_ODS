@@ -56,6 +56,8 @@ span {
   color: #3fd07f;
 }
 
+
+
 .contenedor-banner{
     height: 300px;
     width: 100%;
@@ -104,15 +106,23 @@ span {
     font-size: 13pt;
 }
 
-.bloque-contenedor{
+
+
+.bloque-añadir{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 50px;
+}
+
+.contenedor-titulo{
     display: flex;
     flex-direction: column;
+    gap: 10px;
 }
 
 .titulo-contenedor{
     display: flex;
     align-items: center;
-    margin: 30px 0 0 50px;
 }
 
 .titulo-contenedor h2{
@@ -129,9 +139,31 @@ span {
 
 .texto{
     max-width: 570px;
-    margin: 0 0 30px 50px;
     font-size: 14pt;
     color: #647D79;
+}
+
+.boton-añadir{
+    align-content: center;
+    font-size: 14pt;
+}
+
+.boton-añadir a{    
+    padding: 15px 25px;
+    text-decoration: none;
+    color: #ffffff;    
+    background-color: #06c17d;
+    border: rgba(128, 239, 189, 0.9) solid 1px;
+    border-radius: 15px;
+}
+
+.boton-añadir a:hover{
+    background-color: #139264;
+}
+
+.bloque-contenedores{
+    display: flex;
+    flex-direction: column;
 }
 
 .contenedores{
@@ -300,6 +332,10 @@ span {
     max-width: 550px;
 }
 
+.contenido-beneficios p{
+    color: #647D79;
+}
+
 .titulo-beneficios{
     display: flex;
     align-items: center;
@@ -309,10 +345,6 @@ span {
     font-size: 21pt;
     font-weight: bold;
     color:#183B38;
-}
-
-.contenido-beneficios p{
-    color: #647D79;
 }
 
 .contenedor-beneficios{
