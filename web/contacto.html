@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="CSS/estilos.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <header>
+        <div id="logo">
+           <h2><img src="multimedia/icono.ico" class="logo"><span>Eco</span>Contenedores</h2>
+        </div> 
+
+         <nav>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="contenedores.html">Contenedores</a></li>
+                <li><a href="ODS.html">ODS</a></li>   
+                <li><a href="formulalario.html">formulario</a></li>
+             </ul>
+        </nav>
+   
+    </header>
+
+    <div class="contenedor-pagina">
+        <section class="intro">
+            <h1>Contacto</h1>
+            <p>¿Tienes dudas, una sugerencia o quieres colaborar con nosotros? Escribenos y te responderemos lo antes posible</p>
+        </section>
+        <form>
+            <fieldset>
+                <legend>Tus datos</legend>
+                <div class="">
+                    <div class="">
+                        <div>
+                            <label for="nombre">Nombre completo</label>
+                            <input type="text" name="nombre" id="nombre" placehoder="Nombre y apellidos">
+                        </div>
+                        <div>   
+                            <label for="email">Email</label>
+                            <input type="text" name="email" id="email" placeholder="nombre@ejemplo.com">
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <div>
+                            <label for="telefono">Telefono</label>
+                            <input type="text" name="telefono" id="nombre" placehoder="000 000 000">
+                        </div>
+                        <div>   
+                            <label for="email">Edad</label>
+                            <input type="text" name="edad" id="edad" placeholder="edad">
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Tu consulta</legend>
+                <div class="form-group">
+                    <label for="asunto">Asunto</label>
+                    <select name="asunto" id="asunto">
+                        <option value="elige">-----Elige-----</option>
+                        <option value="sugerencia">Sugerencia</option>
+                        <option value="incidencia">Incidencia</option>
+                        <option value="colaboracion">Colaboracion</option>
+                    </select>   
+                </div>
+                
+                <div class="form-group">
+                    <label>¿Cómo prefieres que te contactemos?</label>
+                    <div class="">
+                        <label><input type="radio" name="email" id="email">Email</label><br>
+                        <label><input type="radio" name="telefono" id="telefono">Teléfono</label><br>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="fecha">
+                        <label for="fecha">Fecha preferida</label>
+                        <input type="date" name="fecha" id="fecha">
+                    </div>
+                    <div class="hora">
+                        <label for="Hora">Hora preferida</label>
+                        <input type="time" name="hora" id="hora">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Temas que te interesan</label>
+                    <div class="checkbo-list">
+                        <label><input type="checkbox" name="ods11" value="ODS 11">ODS 11 . Ciudades sostenibles</label></br>
+                        <label><input type="checkbox" name="ods12" value="ODS 12">ODS 12 . Produccion y consumo responsables</label></br>
+                        <label><input type="checkbox" name="ods13" value="ODS 13">ODS 13 . Accion por el clima</label></br>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="urgencia">Urgencia:3/5</label>
+                    <input type="range" name="urgencia" id="urgencia" min="1" max="5" value="3">
+                </div>
+
+                <div class="form-group">
+                    <label for="Mensaje"></label>
+                    <textarea name="mensaje" id="mensaje" placeholder="Cuentanos en que podemos ayudarte"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label><input type="checkbox" name="privacidad" >Acepto el tratamiento de mis datos</label>
+                </div>
+            </fieldset>
+
+            <div class="botones">
+                <input type="submit" name="enviar" value="Enviar mensaje" class="">
+                <input type="reset" class="borrar" value="borrar">
+            </div>
+        </form>
+    </div>
+
+    <footer id="contacto" class="footer">
+         <p>EcoContenedores - Reto Digitalizamos los ODS</p>
+        <p>Contacto: contacto@ecocontenedores.com</p>
+  </footer>
+</body>
+</html>
