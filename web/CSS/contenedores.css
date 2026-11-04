@@ -57,7 +57,7 @@ span {
 }
 
 
-
+/* Presentacion de Pagina con Banner */
 .contenedor-banner{
     height: 300px;
     width: 100%;
@@ -107,7 +107,7 @@ span {
 }
 
 
-
+/* Contenido Agregar Contenedor */
 .bloque-añadir{
     display: flex;
     justify-content: space-between;
@@ -152,15 +152,86 @@ span {
     padding: 15px 25px;
     text-decoration: none;
     color: #ffffff;    
-    background-color: #06c17d;
+    background:linear-gradient(110deg, #12e4a1, #078f6d8d);
     border: rgba(128, 239, 189, 0.9) solid 1px;
     border-radius: 15px;
 }
 
 .boton-añadir a:hover{
-    background-color: #139264;
+    background-color: #0bc17e;
 }
 
+
+
+/* Formulario */
+
+.form-busqueda{
+    display: flex;
+    justify-content: space-between;
+    margin: 30px 50px;
+    padding: 20px;
+    gap: 30px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 43, 35, 0.35);
+}
+
+.campo{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 10px;
+}
+
+.titulo-campo{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.titulo-campo img{
+    width: 20px;
+    height: auto;
+}
+
+.titulo-campo label{
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.campo input, .campo select{
+    width: 100%;
+    box-sizing: border-box;
+    padding: 8px;
+    background-color: #f1f1f1fd;
+    border: none;
+    border-radius: 8px;
+    font-size: 13pt;
+}
+
+.form-busqueda button{
+    background:linear-gradient(110deg, #12e4a1, #078f6d8d);
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px 30px;
+    border-radius: 80px;
+    font-size: 12pt;
+}
+
+.error-form{
+    color: red;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form-busqueda button:hover{
+    background-color: #0bc17e;
+}
+
+
+/* Contenedores */
 .bloque-contenedores{
     display: flex;
     flex-direction: column;
@@ -168,6 +239,8 @@ span {
 
 .contenedores{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     margin: 0 50px;
     gap: 20px;
 }
@@ -175,9 +248,10 @@ span {
 .contenido-contenedores{
     background-color: #fff;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);       
-    width: 25%;
-    height: 500px;
+    width: calc(25% - 15px);
+    height: auto;
     border-radius: 10px;
+    box-sizing: border-box;
 }
 
 .imagen-contenedores img{
@@ -213,10 +287,11 @@ span {
     gap: 10px;
 }
 
-.titulo-contenedores, .sensor, .calle, .nivel, .detalles{
+.titulo-contenedores, .sensor, .estado, .calle, .nivel, .detalles{
     margin: 25px 20px;
 }
 
+.estado p,
 .calle p{
     font-size: 12pt;
     font-weight: bold;
@@ -225,6 +300,9 @@ span {
 .nivel{
     display: flex;
     justify-content: space-between;
+}
+
+.nivel span{
     color: #767373;
 }
 
@@ -232,23 +310,26 @@ span {
     color: #000;
 }
 
-.detalles{
+.detalles a{
+    display: block;
+    width: 100%;
+    background-color: #ffffff;
     border: #028656 solid 1px;
-    background-color: #fff;
     padding: 10px;
     border-radius: 25px;
     cursor: pointer;
-}
-
-.detalles p{
-    color: #07aa6e;
+    text-decoration: none;
+    color: #26cd90;
     font-weight: bold;
+    box-sizing: border-box;
 }
 
 .detalles:hover{
-    background-color: #ececec;
+    background-color: #efefef;
 }
 
+
+/* Contenido Funcion */
 .bloque-funcion{
     display: flex;
     margin: 50px;
@@ -321,6 +402,9 @@ span {
     color: #647D79;
 }
 
+
+
+/* Contenido Beneficios */
 .bloque-beneficios{
     display: flex;
     flex-direction: column;
@@ -406,6 +490,8 @@ span {
     border-radius: 15px;
 }
 
+
+/* Footer */
 .footer{
     text-align: center;
     background-color: #1e2b24;

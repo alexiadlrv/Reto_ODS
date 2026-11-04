@@ -1,11 +1,11 @@
 <?php 
 
-define('API_URL', 'http://localhost:3000/api/registros'); 
+define('API_URL', 'http://localhost:3000/api/contenedores'); 
 
 function llamarApi($metodo, $url, $datos = null) { 
     $opciones = [ 
 
-        'http' => [ 
+            'http' => [ 
             'method'        => $metodo, 
             'header'        => "Content-Type: application/json\r\n", 
             'ignore_errors' => true   // lee también los 400 y 404 
@@ -20,8 +20,8 @@ function llamarApi($metodo, $url, $datos = null) {
     $respuesta = @file_get_contents($url, false, $contexto); 
 
     if ($respuesta === false) { 
-        return null;              // la API no está arrancada (npm start) 
+        return null;               
     } 
-    return json_decode($respuesta, true);   // JSON -> array asociativo de PHP 
+    return json_decode($respuesta, true);    
 
 } 
