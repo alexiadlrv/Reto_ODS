@@ -1,6 +1,9 @@
 <?php
     require "api.php";
 
+    $contenedores = [];
+    $errorFormulario = "";
+
     if (!defined('API_URL')) {
         define('API_URL', 'http://127.0.0.1:3000/api/contenedores');
     }
@@ -142,7 +145,7 @@
                 <label for="id">Identificador</label>
             </div>
 
-            <input type="text" name="id" id="id" placeholder="Ej. 1" value = "<?php echo htmlspecialchars($_GET["id"] ?? "")?>">
+            <input type="text" name="id" id="id" placeholder="Ej. 1" value = "<?php echo htmlspecialchars($id ?? ""); ?>">
         </div>
 
         <div class="campo">
@@ -150,7 +153,7 @@
                 <img src="multimedia/lugar.png" alt="ubicacion">
                 <label for="ubicacion">Ubicacion</label>
             </div>
-            <input type="text" id="ubicacion" name="ubicacion" placeholder="Ej. Gran Via, Bilbao" value = "<?php echo htmlspecialchars($_GET["ubicacion"] ?? "")?>">
+            <input type="text" id="ubicacion" name="ubicacion" placeholder="Ej. Gran Via, Bilbao" value = "<?php echo htmlspecialchars($ubicacion ?? ""); ?>">
         </div>
         
         <div class="campo">
