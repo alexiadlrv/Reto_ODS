@@ -239,11 +239,7 @@ header{
 
   padding: 20px;
   text-align: left;
-<<<<<<< HEAD:web/CSS/style.css
-  background: linear-gradient(to right, #315050, transparent),url(../multimedia/fondobuscarcont.jpeg) no-repeat;
-=======
   background: linear-gradient(to right, #315050, transparent),  url(../multimedia/fondobuscarcont.jpeg) no-repeat;
->>>>>>> origin/main:web/CSS/estilos.css
   background-size: cover;
   padding-left: 100px;
   border-top: 2px solid #1c8a4e;
