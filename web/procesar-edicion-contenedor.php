@@ -9,18 +9,26 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// 1. Recoger el id y los datos editables del formulario
+$errores = [];
+
+// 1. Comprobar que los campos obligatorios llegan en el POST
+$camposObligatorios = ['id', 'nombre', 'tipo', 'ubicacion', 'fechaInstalacion', 'color'];
+foreach ($camposObligatorios as $campo) {
+    if (!isset($_POST[$campo])) {
+        $errores[] = "El campo $campo no se ha enviado correctamente.";
+    }
+}
+
 $id = (int)($_POST['id'] ?? 0);
 $datos = [
-    'nombre' => trim($_POST['nombre'] ?? ''),
+    'nombre' => strip_tags(trim($_POST['nombre'] ?? '')),
     'tipo' => $_POST['tipo'] ?? '',
-    'ubicacion' => trim($_POST['ubicacion'] ?? ''),
+    'ubicacion' => strip_tags(trim($_POST['ubicacion'] ?? '')),
     'fechaInstalacion' => $_POST['fechaInstalacion'] ?? '',
     'color' => $_POST['color'] ?? ''
 ];
 
 // 2. Validar
-$errores = [];
 $tiposValidos = ['vidrio', 'plastico', 'organico', 'papel', 'metal', 'resto'];
 
 if ($id <= 0) {
@@ -63,6 +71,5 @@ if (isset($respuesta['error'])) {
     exit;
 }
 
-// 4. Todo bien
 echo json_encode(['ok' => true, 'contenedor' => $respuesta]);
 ?>
