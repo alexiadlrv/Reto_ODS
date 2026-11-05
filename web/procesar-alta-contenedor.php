@@ -9,17 +9,25 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-// 1. Recoger los datos del formulario
+$errores = [];
+
+// 1. Comprobar que los campos obligatorios llegan en el POST
+$camposObligatorios = ['nombre', 'tipo', 'ubicacion', 'fechaInstalacion', 'color'];
+foreach ($camposObligatorios as $campo) {
+    if (!isset($_POST[$campo])) {
+        $errores[] = "El campo $campo no se ha enviado correctamente.";
+    }
+}
+
 $datos = [
-    'nombre' => trim($_POST['nombre'] ?? ''),
+    'nombre' => strip_tags(trim($_POST['nombre'] ?? '')),
     'tipo' => $_POST['tipo'] ?? '',
-    'ubicacion' => trim($_POST['ubicacion'] ?? ''),
+    'ubicacion' => strip_tags(trim($_POST['ubicacion'] ?? '')),
     'fechaInstalacion' => $_POST['fechaInstalacion'] ?? '',
     'color' => $_POST['color'] ?? ''
 ];
 
 // 2. Validar
-$errores = [];
 $tiposValidos = ['vidrio', 'plastico', 'organico', 'papel', 'metal', 'resto'];
 
 if (strlen($datos['nombre']) < 3 || strlen($datos['nombre']) > 50) {
@@ -47,7 +55,7 @@ if (!empty($errores)) {
 // 3. Llenado aleatorio de 1 a 100
 $datos['llenado'] = rand(1, 100);
 
-// 4. Estado automático según llenado y probabilidad
+// 4. Estado automatico según llenado y probabilidad
 if ($datos['llenado'] > 80) {
     $datos['estado'] = 'lleno';
 } elseif (rand(1, 5) === 1) {
@@ -73,4 +81,3 @@ if (isset($respuesta['error'])) {
 }
 
 echo json_encode(['ok' => true, 'contenedor' => $respuesta]);
-?>
