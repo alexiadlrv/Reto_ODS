@@ -1,0 +1,68 @@
+<?php
+require 'api.php';
+
+header('Content-Type: application/json');
+
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    echo json_encode(['errores' => ['Método no permitido']]);
+    exit;
+}
+
+// 1. Recoger el id y los datos editables del formulario
+$id = (int)($_POST['id'] ?? 0);
+$datos = [
+    'nombre' => trim($_POST['nombre'] ?? ''),
+    'tipo' => $_POST['tipo'] ?? '',
+    'ubicacion' => trim($_POST['ubicacion'] ?? ''),
+    'fechaInstalacion' => $_POST['fechaInstalacion'] ?? '',
+    'color' => $_POST['color'] ?? ''
+];
+
+// 2. Validar
+$errores = [];
+$tiposValidos = ['vidrio', 'plastico', 'organico', 'papel', 'metal', 'resto'];
+
+if ($id <= 0) {
+    $errores[] = 'Falta el id del contenedor.';
+}
+if (strlen($datos['nombre']) < 3 || strlen($datos['nombre']) > 50) {
+    $errores[] = 'El nombre debe tener entre 3 y 50 caracteres.';
+}
+if (!in_array($datos['tipo'], $tiposValidos)) {
+    $errores[] = 'Tipo de residuo no válido.';
+}
+if (strlen($datos['ubicacion']) < 3 || strlen($datos['ubicacion']) > 100) {
+    $errores[] = 'La ubicación debe tener entre 3 y 100 caracteres.';
+}
+if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $datos['fechaInstalacion'])) {
+    $errores[] = 'La fecha de instalación no es válida.';
+}
+if (!preg_match('/^#[0-9a-fA-F]{6}$/', $datos['color'])) {
+    $errores[] = 'El color no es válido.';
+}
+
+if (!empty($errores)) {
+    http_response_code(400);
+    echo json_encode(['errores' => $errores]);
+    exit;
+}
+
+// 3. Llamar a la API
+$respuesta = llamarApi('PUT', API_URL . '/' . $id, $datos);
+
+if ($respuesta === null) {
+    http_response_code(502);
+    echo json_encode(['errores' => ['No se pudo conectar con la API. ¿Está arrancada?']]);
+    exit;
+}
+
+if (isset($respuesta['error'])) {
+    http_response_code(400);
+    echo json_encode(['errores' => [$respuesta['error']]]);
+    exit;
+}
+
+// 4. Todo bien
+echo json_encode(['ok' => true, 'contenedor' => $respuesta]);
+?>
