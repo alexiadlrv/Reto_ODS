@@ -34,15 +34,23 @@ $tiposValidos = ['vidrio', 'plastico', 'organico', 'papel', 'metal', 'resto'];
 if ($id <= 0) {
     $errores[] = 'Falta el id del contenedor.';
 }
-if (strlen($datos['nombre']) < 3 || strlen($datos['nombre']) > 50) {
-    $errores[] = 'El nombre debe tener entre 3 y 50 caracteres.';
+
+if (strlen($datos['nombre']) < 3) {
+    $errores[] = 'El nombre debe tener al menos 3 caracteres.';
+} elseif (strlen($datos['nombre']) > 50) {
+    $errores[] = 'El nombre no puede tener más de 50 caracteres.';
 }
+
 if (!in_array($datos['tipo'], $tiposValidos)) {
     $errores[] = 'Tipo de residuo no válido.';
 }
-if (strlen($datos['ubicacion']) < 3 || strlen($datos['ubicacion']) > 100) {
-    $errores[] = 'La ubicación debe tener entre 3 y 100 caracteres.';
+
+if (strlen($datos['ubicacion']) < 3) {
+    $errores[] = 'La ubicación debe tener al menos 3 caracteres.';
+} elseif (strlen($datos['ubicacion']) > 100) {
+    $errores[] = 'La ubicación no puede tener más de 100 caracteres.';
 }
+
 if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $datos['fechaInstalacion'])) {
     $errores[] = 'La fecha de instalación no es válida.';
 }
