@@ -381,7 +381,7 @@
                                     echo "el mensaje es demasiado corto(minimo 10 caracteres)<br>";
                                     $correcto=false;
                             }else{
-                                $mensajeSeguro=htmlspecialchars($mensaje,ENT_QUOTES,'UTF-8')
+                                $mensajeSeguro=htmlspecialchars($mensaje,ENT_QUOTES,'UTF-8');
                             }
 
                         

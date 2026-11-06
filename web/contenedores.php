@@ -99,7 +99,7 @@
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="contenedores.html">Contenedores</a></li>
                 <li><a href="ODS.html">ODS</a></li>   
-                <li><a href="formulalario.html">Formulario</a></li>
+                <li><a href="contacto.php">Formulario</a></li>
              </ul>
         </nav>
    
