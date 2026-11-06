@@ -198,9 +198,9 @@
         <div class="contenedores">
 
             <?php if($contenedores === null): ?>
-                <p> Error no se ha podido conectar con la API de Node.js. </p>
+                <p class = "error"> Error no se ha podido conectar con la API de Node.js. </p>
             <?php elseif(empty($contenedores)): ?>    
-                <p> No se han encontrado contenedores con esa busqueda. </p>
+                <p class="error"> No se han encontrado contenedores con esa busqueda. </p>
             <?php else: ?>    
                 
                 <?php foreach ($contenedores as $c):

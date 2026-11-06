@@ -221,7 +221,11 @@ span {
 }
 
 .error-form{
-    color: red;
+    margin: 30px 50px;
+    padding: 15px;
+    background: #f94a4a;
+    color: rgb(156, 0, 0);
+    font-size: 14pt;
     font-weight: bold;
     text-align: center;
 }
@@ -243,6 +247,15 @@ span {
     justify-content: flex-start;
     margin: 0 50px;
     gap: 20px;
+}
+
+.error{
+    width: 100%;
+    background: #e5e7e6;
+    text-align: center;
+    font-size: 16pt;
+    font-weight: bold;
+    padding: 10px;
 }
 
 .contenido-contenedores{
