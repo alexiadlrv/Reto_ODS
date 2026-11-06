@@ -1,21 +1,16 @@
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+    padding: 0;
+    margin: 0;
+    font-family:Arial, Helvetica, sans-serif ;
+    box-sizing: border-box;
 }
 
 body{
-    font-family:Kalam;
-    
     line-height: 1.5;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-  
-
    }
-
 
 /*----------------FOOOTER-------------------*/
 .footer{
@@ -25,6 +20,7 @@ body{
   font-size: 17px;
   padding: 20px;
 }
+
 /* ---------- CABECERA ---------- */
 
 header{
@@ -69,8 +65,6 @@ header{
   background-color: #1b4a30;
   color: #3fd07f;
 }
-
-
 
 
 

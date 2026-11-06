@@ -9,18 +9,6 @@ body{
     background-color: rgb(247, 252, 252);
 }
 
-header{
-    background-color: #0d2018;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 64px;
-    padding: 20px;
-    padding-left: 100px;
-    padding-right: 200px;
-}
-
-
 .logo{
     width: 30px;
     height: auto;
@@ -501,14 +489,4 @@ span {
     height: 100%;
     object-fit: cover;
     border-radius: 15px;
-}
-
-
-/* Footer */
-.footer{
-    text-align: center;
-    background-color: #1e2b24;
-    color: white;
-    font-size: 17px;
-    padding: 20px;
 }
