@@ -196,6 +196,7 @@
                     <fieldset>
                         <legend>Tus datos</legend>
                         <div class="contenedorDatos">
+                            <h2>Tus datos</h2>
                                 <div class="DatosHijos">
                                     <label for="nombre">Nombre completo</label>
                                     <input type="text" name="nombre" id="nombre" placehoder="Nombre y apellidos">
@@ -221,6 +222,7 @@
                     <fieldset>
                         <legend>Tu consulta</legend>
                         <div class="grupos">
+                            <h2>Tus consulta</h2>
                             <label for="asunto">Asunto</label>
                             <select name="asunto" id="asunto">
                                 <option value="elige">-----Elige-----</option>
