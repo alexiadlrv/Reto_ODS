@@ -85,6 +85,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contenedores</title>
+    <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/contenedores.css">
 </head>
 <body>
@@ -339,6 +340,101 @@
             </div> 
         </div>
     </div>
+    
+    <!-- NUEVO CONTENEDOR -->     
+    <form action="procesar-alta-contenedor.php" method="post"  id="nuevo-contenedor-agregar">
+        <div class="contenedor-titulo-agregar">
+            <div class="logo-titulo-agregar">
+                <img src="multimedia/imgBuscador.png" alt="agregar">
+            </div>
+            <div class="titulo-agregar">
+                <h1>Nuevo Contenedor</h1>
+                <span>Registra un nuevo contenedor inteligente en el sistema.</span>
+            </div>
+        </div>
+
+        <div class="datos-form-agregar">
+            <div class="subtitulo-form-agregar">
+                <img src="multimedia/nube.png" alt="persona">
+                <p>Datos Personales</p>
+            </div>
+
+            <div class="contenido-form-agregar">
+                <div class="orden-form-agregar">
+                    <label for="id">Nombre</label>
+                    <input type="text" name="nombre" id="nombre">
+                </div>
+
+                <div class="orden-form-agregar">
+                    <label for="id">Email</label>
+                    <input type="text" name="correo" id="correo">
+                </div>
+
+                <div class="orden-form-agregar">
+                    <label for="id">N° de Documento</label>
+                    <input type="text" name="id" id="id">
+                </div>
+            </div>
+        </div>
+
+        <div class="datos-form-agregar">
+            <div class="subtitulo-form-agregar">
+                <img src="multimedia/icono-verde.png" alt="basura">
+                <p>Informacion General</p>
+            </div>
+
+            <div class="contenido-form-agregar">
+                <div class="orden-form-agregar">
+                    <label for="id">Identificador del Contenedor</label>
+                    <input type="text" name="nombre" id="nombre">
+                </div>
+
+                <div class="orden-form-agregar">
+                    <label for="id">Tipo de residuo</label>
+                    <select name="tipo" id="tipo">
+                        <option value="organico">Organico</option>
+                        <option value="papel">Papel y Carton</option>
+                        <option value="Vidrio">Vidrio</option>
+                        <option value="plastico">Plastico</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="datos-form-agregar">
+            <div class="subtitulo-form-agregar">
+                <img src="multimedia/lugar.png" alt="ubi">
+                <p>Ubicacion</p>
+            </div>
+
+            <div class="contenido-form-agregar">
+                <div class="orden-form-agregar">
+                    <label for="id">Direccion</label>
+                    <input type="text" name="direccion" id="direccion">
+                </div>
+
+                <div class="orden-form-agregar">
+                    <label for="id">Fecha de Instalacion</label>
+                    <input type="date" name="fechaInstalacion" id="fechaInstalacion">
+                </div>
+            </div>
+        </div>
+
+        <div class="boton-form-nuevo">
+            <input type="submit" name="enviar" id="enviar" value="Agregar">
+        </div>
+
+        
+        
+    </form>
+
+
+
+
+
+
+
+
 
     <footer id="contacto" class="footer">
          <p>EcoContenedores - Reto Digitalizamos los ODS</p>
