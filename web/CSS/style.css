@@ -74,8 +74,9 @@ header{
   color: white;
   display: flex;
   align-items: center;
-  gap: 40px;
   position: relative;
+ min-height: calc(100vh - 60px);
+
 }
 
 .portada-texto {
@@ -83,7 +84,7 @@ header{
     text-align: left;
     width: 100%;
     max-width: 500px;
-    margin: 100px;
+    margin: 10px 80px;
     position: absolute;
     
 }
@@ -92,6 +93,7 @@ header{
 .portada-imagen img {
   width: 100%;
   display: block;
+  min-height: calc(100vh - 60px);
 }
 
 .etiqueta {
@@ -99,14 +101,14 @@ header{
   background-color: rgba(63, 208, 127, 0.2);
   border: 1px solid #3fd07f;
   color: #b9f3d2;
-  font-size: 17px;
+  font-size: 20px;
   padding: 4px 14px;
   border-radius: 20px;
   margin-bottom: 20px;
 }
 
 .portada h1 {
-  font-size: 42px;
+  font-size: 50px;
   line-height: 1.2;
   margin-bottom: 20px;
   text-align: left;
@@ -116,6 +118,7 @@ header{
 
 .portada p {
   margin-bottom: 25px;
+  font-size: 15px;
 }
 
 .boton {
@@ -262,6 +265,10 @@ header{
 
 .buscadortexto{
   margin-left: 40px;
+}
+
+.tituloConsulta{
+  color:white;
 }
 
 
