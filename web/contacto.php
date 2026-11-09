@@ -12,135 +12,129 @@
                 padding: 0;
                 background-image: url('./multimedia/fondoformbilb.jpeg');
                 background-repeat: no-repeat;
-                background-size: cover;          
-                background-position: center;    
-                background-attachment: fixed;    
-                min-height: 100vh;              
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+                min-height: 100vh;
             }
 
-            .orden-form {
-                display: flex;
-                justify-content: center;
-                gap: 30px;
-                align-items: stretch; 
-            }
-
-            .orden-form fieldset {
-                flex: 1;           
-                background-color: white; 
-                padding: 20px;
-                margin-bottom: 25px;
-                box-sizing: border-box;
-                border-radius: 24px;
-            }
-            
-            
             .contenedor {
-                margin: 60px 30px;
+                max-width: 700px;
+                margin: 40px auto;
                 padding: 40px;
-                box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-                background: rgba(255, 255, 255, 0.03); 
-                backdrop-filter: blur(3px);    
+                background: rgba(255, 255, 255, 0.9); 
+                backdrop-filter: blur(3px);
                 border-radius: 24px;
             }
 
-            h1{
+            h1 {
                 color: #1c8a4e;
-                font-size: 28px;
+                font-size: 26px;
                 margin-bottom: 8px;
-                text-align:center;
+                text-align: center;
             }
 
-            p.subtitulo{
+            p.subtitulo {
                 color: #555;
                 margin-bottom: 30px;
-                text-align:center;
-                font-weight:bold;
+                text-align: center;
+                font-weight: bold;
             }
 
-            fieldset{
-                border:1px solid #d0d7d3;
+            fieldset {
+                border: 1px solid #d0d7d3;
                 border-radius: 6px;
                 padding: 20px;
                 margin-bottom: 25px;
-                background-color:white;
+                background-color: #fafbfc;
             }
 
-            .botones{
-                display: flex;
-                justify-content: center;
-                gap: 30px;
-                margin-bottom:15px;
-                
-            }
-
-            legend{
+            legend {
                 font-weight: bold;
                 color: #1c8a4e;
-                font-size:17px;
-                
+                padding: 0 10px;
             }
 
-            .contenedorDatos{
-                display:flex;
-                flex-direction: column;
-                gap: 40px;
-            }
-        
-          
-            .grupos{
+
+            .contenedorDatos {
+                display: flex;
+                gap: 20px;
                 margin-bottom: 15px;
-                padding:10px;
-            }
-            
-            .tipoUrgencia{
-                color:#d90429;
-                background-color: #ffe3e6;
-                padding:2px 6px;
-                border-radius:4px;
             }
 
-            .sliderPersonalizado{
-                width:100%;
-                cursor: pointer;
-                accent-color:green;
+            .DatosHijos {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .grupos {
+                margin-bottom: 15px;
             }
 
             label {
-                
                 margin-bottom: 6px;
                 font-weight: bold;
-            
+                display: block;
             }
-        
-            input[type="text"], input[type="email"], input[type="date"], input[type="time"], select, textarea {
+
+            input[type="text"], 
+            input[type="email"], 
+            input[type="date"], 
+            input[type="time"], 
+            select, 
+            textarea {
                 width: 100%;
                 padding: 10px;
                 border: 1px solid #ccc;
                 border-radius: 4px;
-                
+                box-sizing: border-box; 
             }
 
-            input[type="range"]{
+            input[type="range"] {
                 width: 100%;
-                
+                cursor: pointer;
+                accent-color: green;
             }
 
             textarea {
-                height: 50px;
+                height: 70px;
+                resize: vertical;
             }
 
-            .grupo-checkbox  label {
+            .grupo-checkbox label {
                 font-weight: normal;
                 display: flex;
                 align-items: center;
                 gap: 8px;
-            
             }
 
-            .boton{
-                display: inline-block;
+            .botones {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                margin-top: 20px;
+            }
+
+            .botonSubmit {
                 background-color: #1c8a4e;
+                color: white;
+                padding: 12px 24px;
+                border: none;
+                border-radius: 6px;
+                font-weight: bold;
+                cursor: pointer;
+                font-size: 14px;
+                
+            } 
+
+            .botonSubmit:hover {
+                background-color: #146c3d;
+                transform: scale(1.05); 
+            }
+
+            .botonReset {
+                background-color: #6c757d;
                 color: white;
                 padding: 12px 24px;
                 border: none;
@@ -149,22 +143,23 @@
                 cursor: pointer;
                 text-decoration: none;
                 font-size: 14px;
-                transition: background-color 0.3s ease;
+                
             }
 
-            input[type="reset"].boton {
-                background-color: #6c757d;
+            .botonReset:hover {
+                background-color: #5a6268;
+                transform: scale(1.05);
             }
 
             .resultados {
+                margin-top: 30px;
                 padding: 20px;
                 background-color: #e9f5ed;
                 border-left: 4px solid #1c8a4e;
                 border-radius: 4px;
-                color:red;
+                color:red;  
             }
-
-        </style>
+                    </style>
     </head>
     <body>
         <header>
@@ -186,7 +181,7 @@
 
         <div class="contenedor">
             <section class="intro">
-                <h1>Contacto</h1>
+                <h1>CONTACTO</h1>
                 <p class="subtitulo">¿Tienes dudas, una sugerencia o quieres colaborar con nosotros? Escribenos y te responderemos lo antes posible</p>
             </section>
 
@@ -196,9 +191,8 @@
                     <fieldset>
                         <legend>Tus datos</legend>
                         <div class="contenedorDatos">
-                            <h2>Tus datos</h2>
                                 <div class="DatosHijos">
-                                    <label for="nombre">Nombre completo</label>
+                                    <label for="nombre">Nombre</label>
                                     <input type="text" name="nombre" id="nombre" placehoder="Nombre y apellidos">
                                 </div>
 
@@ -220,9 +214,8 @@
                     </fieldset>
 
                     <fieldset>
-                        <legend>Tu consulta</legend>
+                        <legend>Tus consulta</legend>
                         <div class="grupos">
-                            <h2>Tus consulta</h2>
                             <label for="asunto">Asunto</label>
                             <select name="asunto" id="asunto">
                                 <option value="elige">-----Elige-----</option>
@@ -298,8 +291,8 @@
 
 
                 <div class = "botones" >
-                    <input type="submit" name="enviar" value="Enviar mensaje" class="boton">
-                    <input type="reset" name="borrar" value="borrar"  class="boton">
+                    <input type="submit" name="enviar" value="Enviar mensaje" class="botonSubmit">
+                    <input type="reset" name="borrar" value="borrar"  class="botonReset">
                 </div>
             </form>
 
