@@ -4,10 +4,6 @@
     $contenedores = [];
     $errorFormulario = "";
 
-    if (!defined('API_URL')) {
-        define('API_URL', 'http://127.0.0.1:3000/api/contenedores');
-    }
-    
     if(isset($_GET["enviar"])){
         if (isset($_GET["id"])){
             if(isset($_GET["ubicacion"])){
@@ -24,7 +20,7 @@
                         if($id !== ""){
                             if(!ctype_digit($id)){
                                 $errorFormulario .= "Error: El id del contenedor solo debe contener números enteros. <br>";
-                                $correcto = false; 
+                                $correcto = false;
                             }else if(intval($id) < 0){
                                 $errorFormulario .= "Error: El id del contenedor no puede ser menor a 0. <br>";
                                 $correcto = false;
@@ -51,7 +47,7 @@
                             $parametros["tipo"] = $tipo;
 
                             $parametros["estado"] = $estado;
-                            
+
                             $urlConsulta = API_URL;
                             if(!empty($parametros)){
                                 $urlConsulta .= "?" . http_build_query($parametros);
@@ -93,17 +89,17 @@
     <header>
         <div id="logo">
            <h2><img src="multimedia/icono.ico" class="logo"><span>Eco</span>Contenedores</h2>
-        </div> 
+        </div>
 
          <nav>
             <ul class="menu">
                 <li><a href="index.html">Inicio</a></li>
                 <li><a href="contenedores.html">Contenedores</a></li>
-                <li><a href="ODS.html">ODS</a></li>   
+                <li><a href="ODS.html">ODS</a></li>
                 <li><a href="contacto.php">Formulario</a></li>
              </ul>
         </nav>
-   
+
     </header>
 
     <div class="contenedor-banner">
@@ -112,11 +108,11 @@
                 <div class="punto"></div>
                 <p>TECNOLOGIA loT</p>
             </div>
-    
+
             <div class="titulo-banner">
                 <h1>Contenedores <span>inteligentes</span></h1>
             </div>
-            
+
             <div class="parrafos-banner">
                 <p>Sensores loT que monitorizan el nivel de llenado, optimizan las rutas de rocogida y ayudan a mantener nuestras ciudades más limpias y sostenibles.</p>
             </div>
@@ -130,7 +126,7 @@
                 <div class="guion"></div>
                 <h2>Nuestros contenedores</h2>
             </div>
-        
+
             <p class = "texto">Cada residuo cuenta. Descubre el estado de nuestros contenedores inteligentes y cómo contribuyen a un gestion más eficiente.</p>
         </div>
 
@@ -156,7 +152,7 @@
             </div>
             <input type="text" id="ubicacion" name="ubicacion" placeholder="Ej. Gran Via, Bilbao" value = "<?php echo htmlspecialchars($ubicacion ?? ""); ?>">
         </div>
-        
+
         <div class="campo">
             <div class="titulo-campo">
                 <img src="multimedia/tipo.png" alt="tipo">
@@ -165,7 +161,7 @@
 
             <select name="tipo" id="tipo">
                 <option value="">Todos los Tipos</option>
-                <option value="envaces" <?php echo seleccionar("tipo", "envaces"); ?>>Envaces</option>
+                <option value="plastico" <?php echo seleccionar("tipo", "plastico"); ?>>Plastico</option>
                 <option value="papel" <?php echo seleccionar("tipo", "papel"); ?>>Papel y Carton</option>
                 <option value="vidrio" <?php echo seleccionar("tipo", "vidrio"); ?>>Vidrio</option>
                 <option value="organico" <?php echo seleccionar("tipo", "organico"); ?>>Organico</option>
@@ -185,7 +181,7 @@
                 <option value="averiado" <?php echo seleccionar("estado", "averiado"); ?>>Fuera de Servicio</option>
             </select>
         </div>
-        
+
         <button type="submit" name="enviar" id="enviar"> Buscar Contenedor </button>
     </form>
 
@@ -200,10 +196,10 @@
 
             <?php if($contenedores === null): ?>
                 <p class = "error"> Error no se ha podido conectar con la API de Node.js. </p>
-            <?php elseif(empty($contenedores)): ?>    
+            <?php elseif(empty($contenedores)): ?>
                 <p class="error"> No se han encontrado contenedores con esa busqueda. </p>
-            <?php else: ?>    
-                
+            <?php else: ?>
+
                 <?php foreach ($contenedores as $c):
                     $tipoResiduo = strtolower($c["tipo"] ?? "general");
 
@@ -224,7 +220,7 @@
                         $imgIcono = "multimedia/icono-marron.png";
                         $nombreTipo = ucfirst($tipoResiduo);
                     }
-                    
+
                 ?>
 
 
@@ -232,12 +228,12 @@
                     <div class="imagen-contenedores">
                         <img src="<?php echo htmlspecialchars($imgContenedor)?>" alt="<?php echo htmlspecialchars($nombreTipo) ?>">
                     </div>
-                    
+
                     <div class="titulo-contenedores">
                         <img src="<?php echo htmlspecialchars($imgIcono)?>" alt="<?php echo htmlspecialchars($tipoResiduo) ?>">
                         <p><?php echo htmlspecialchars($nombreTipo); ?></p>
                     </div>
-                    
+
                     <div class="sensor">
                         <div class="punto"></div>
                         <p>Sensor conectado</p>
@@ -246,23 +242,23 @@
                     <div class="estado">
                         <p>Estado:<?php echo ucfirst($c["estado"]); ?></p>
                     </div>
-                    
+
                     <div class="calle">
                         <p><?php echo htmlspecialchars($c["ubicacion"]) ?></p>
                     </div>
-                    
+
                     <div class="nivel">
                         <span>Nivel de llenado:</span>
                         <strong id="porcentaje"><?php echo intval($c["llenado"])?>%</strong>
                     </div>
-                    
+
                     <div class="detalles">
-                        <a href="detalle.php?id= <?php echo intval($c['id']); ?>"> Ver detalles</a>
+                        <a href="detalle.php?id=<?php echo intval($c['id']); ?>"> Ver detalles</a>
                     </div>
                 </div>
 
-                <?php endforeach; ?>    
-            <?php endif; ?>    
+                <?php endforeach; ?>
+            <?php endif; ?>
         </div>
     </div>
 
@@ -308,7 +304,7 @@
         </div>
 
         <div class="contenedor-beneficios">
-        
+
             <div class="beneficios">
                 <div class="datos-beneficios">
                     <img src="multimedia/hoja.png" alt="hoja">
@@ -337,12 +333,12 @@
 
             <div class="imagen-grande">
                 <img src="multimedia/imagen-grande.png" alt="">
-            </div> 
+            </div>
         </div>
     </div>
-    
-    <!-- NUEVO CONTENEDOR -->     
-    <form action="procesar-alta-contenedor.php" method="post"  id="nuevo-contenedor-agregar">
+
+    <!-- NUEVO CONTENEDOR -->
+    <form action="procesar-alta-contenedor.php" method="post" id="nuevo-contenedor-agregar">
         <div class="contenedor-titulo-agregar">
             <div class="logo-titulo-agregar">
                 <img src="multimedia/imgBuscador.png" alt="agregar">
@@ -355,47 +351,25 @@
 
         <div class="datos-form-agregar">
             <div class="subtitulo-form-agregar">
-                <img src="multimedia/nube.png" alt="persona">
-                <p>Datos Personales</p>
-            </div>
-
-            <div class="contenido-form-agregar">
-                <div class="orden-form-agregar">
-                    <label for="id">Nombre</label>
-                    <input type="text" name="nombre" id="nombre">
-                </div>
-
-                <div class="orden-form-agregar">
-                    <label for="id">Email</label>
-                    <input type="text" name="correo" id="correo">
-                </div>
-
-                <div class="orden-form-agregar">
-                    <label for="id">N° de Documento</label>
-                    <input type="text" name="id" id="id">
-                </div>
-            </div>
-        </div>
-
-        <div class="datos-form-agregar">
-            <div class="subtitulo-form-agregar">
                 <img src="multimedia/icono-verde.png" alt="basura">
-                <p>Informacion General</p>
+                <p>Información General</p>
             </div>
 
             <div class="contenido-form-agregar">
                 <div class="orden-form-agregar">
-                    <label for="id">Identificador del Contenedor</label>
-                    <input type="text" name="nombre" id="nombre">
+                    <label for="nombre">Identificador del Contenedor</label>
+                    <input type="text" name="nombre" id="nombre" required minlength="3" maxlength="50">
                 </div>
 
                 <div class="orden-form-agregar">
-                    <label for="id">Tipo de residuo</label>
-                    <select name="tipo" id="tipo">
-                        <option value="organico">Organico</option>
-                        <option value="papel">Papel y Carton</option>
-                        <option value="Vidrio">Vidrio</option>
-                        <option value="plastico">Plastico</option>
+                    <label for="tipo">Tipo de residuo</label>
+                    <select name="tipo" id="tipo" required>
+                        <option value="organico">Orgánico</option>
+                        <option value="papel">Papel y Cartón</option>
+                        <option value="vidrio">Vidrio</option>
+                        <option value="plastico">Plástico</option>
+                        <option value="metal">Metal</option>
+                        <option value="resto">Resto</option>
                     </select>
                 </div>
             </div>
@@ -404,18 +378,32 @@
         <div class="datos-form-agregar">
             <div class="subtitulo-form-agregar">
                 <img src="multimedia/lugar.png" alt="ubi">
-                <p>Ubicacion</p>
+                <p>Ubicación</p>
             </div>
 
             <div class="contenido-form-agregar">
                 <div class="orden-form-agregar">
-                    <label for="id">Direccion</label>
-                    <input type="text" name="direccion" id="direccion">
+                    <label for="ubicacion">Dirección</label>
+                    <input type="text" name="ubicacion" id="ubicacion" required minlength="3" maxlength="100">
                 </div>
 
                 <div class="orden-form-agregar">
-                    <label for="id">Fecha de Instalacion</label>
-                    <input type="date" name="fechaInstalacion" id="fechaInstalacion">
+                    <label for="fechaInstalacion">Fecha de Instalación</label>
+                    <input type="date" name="fechaInstalacion" id="fechaInstalacion" required>
+                </div>
+            </div>
+        </div>
+
+        <div class="datos-form-agregar">
+            <div class="subtitulo-form-agregar">
+                <img src="multimedia/hoja.png" alt="color">
+                <p>Color identificativo</p>
+            </div>
+
+            <div class="contenido-form-agregar">
+                <div class="orden-form-agregar">
+                    <label for="color">Color</label>
+                    <input type="color" name="color" id="color" value="#2e7d32" required>
                 </div>
             </div>
         </div>
@@ -423,18 +411,28 @@
         <div class="boton-form-nuevo">
             <input type="submit" name="enviar" id="enviar" value="Agregar">
         </div>
-
-        
-        
     </form>
 
-
-
-
-
-
-
-
+    <!-- JS para que el formulario de alta no muestre JSON crudo al enviar -->
+    <script>
+    document.getElementById('nuevo-contenedor-agregar').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const form = this;
+        fetch(form.action, { method: 'POST', body: new FormData(form) })
+            .then(function (r) { return r.json(); })
+            .then(function (data) {
+                if (data.ok) {
+                    alert('Contenedor creado correctamente.');
+                    location.reload();
+                } else {
+                    alert('Errores:\n' + data.errores.join('\n'));
+                }
+            })
+            .catch(function () {
+                alert('No se pudo conectar con el servidor.');
+            });
+    });
+    </script>
 
     <footer id="contacto" class="footer">
          <p>EcoContenedores - Reto Digitalizamos los ODS</p>
