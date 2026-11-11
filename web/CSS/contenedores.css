@@ -103,7 +103,7 @@ body{
 }
 
 .boton-añadir a:hover{
-    background-color: #18de95;
+    background: #27a879;
 }
 
 
@@ -176,7 +176,7 @@ body{
 }
 
 .form-busqueda button:hover{
-    background-color: #18de95;
+    background: #27a879;
 }
 
 
@@ -282,7 +282,7 @@ body{
     box-sizing: border-box;
 }
 
-.detalles:hover{
+.detalles a:hover{
     background-color: #efefef;
 }
 
@@ -535,5 +535,5 @@ body{
 }
 
 .boton-form-nuevo input:hover{
-    background-color: #18de95;
+    background: #27a879;
 }
