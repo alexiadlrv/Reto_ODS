@@ -15,9 +15,8 @@
 
          <nav>
             <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="contenedores.php">Contenedores</a></li>
-                <li><a href="ODS.html">ODS</a></li>   
+                <li><a href="index.php">Inicio</a></li>
+                <li><a href="contenedores.php">Contenedores</a></li>  
                 <li><a href="contacto.php">formulario</a></li>
              </ul>
         </nav>
