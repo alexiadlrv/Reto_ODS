@@ -1,49 +1,6 @@
-*{
-    padding: 0;
-    margin: 0;
-    font-family:Arial, Helvetica, sans-serif ;
-    box-sizing: border-box;
-}
-
 body{
     background-color: rgb(247, 252, 252);
 }
-
-.logo{
-    width: 30px;
-    height: auto;
-}
-
-span {
-  color: rgb(50, 230, 146);
-}
-
-#logo h2{
-    color: white;
-}
-
-
-.menu{
-  display: flex;
-  gap: 30px ;
-  list-style-type: none;
-}
-
-
-.menu li a{
-  color:white;
-  display: block;
-  padding: 22px;
-  text-decoration: none;
-  font-size: 13pt; 
-}
-
-.menu li a:hover,
-.menu li a:focus-visible {
-  background-color: #1b4a30;
-  color: #3fd07f;
-}
-
 
 /* Presentacion de Pagina con Banner */
 .contenedor-banner{
@@ -140,13 +97,13 @@ span {
     padding: 15px 25px;
     text-decoration: none;
     color: #ffffff;    
-    background:linear-gradient(110deg, #12e4a1, #078f6d8d);
+    background:linear-gradient(110deg, #12e4a1, #2ce2b5ba);
     border: rgba(128, 239, 189, 0.9) solid 1px;
     border-radius: 15px;
 }
 
 .boton-añadir a:hover{
-    background-color: #0bc17e;
+    background: #27a879;
 }
 
 
@@ -198,7 +155,7 @@ span {
 }
 
 .form-busqueda button{
-    background:linear-gradient(110deg, #12e4a1, #078f6d8d);
+    background:linear-gradient(110deg, #12e4a1, #2ce2b5ba);
     color: #fff;
     border: none;
     font-weight: bold;
@@ -219,7 +176,7 @@ span {
 }
 
 .form-busqueda button:hover{
-    background-color: #0bc17e;
+    background: #27a879;
 }
 
 
@@ -325,7 +282,7 @@ span {
     box-sizing: border-box;
 }
 
-.detalles:hover{
+.detalles a:hover{
     background-color: #efefef;
 }
 
@@ -480,7 +437,7 @@ span {
     flex: 3;
     min-width: 0;
     height: 350px;
-    margin-top: -105px;
+    margin-top: -80px;
     border-radius: 10px;
 }
 
@@ -489,4 +446,94 @@ span {
     height: 100%;
     object-fit: cover;
     border-radius: 15px;
+}
+
+
+/* NUEVO CONTENEDOR */
+#nuevo-contenedor-agregar {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    margin: 30px 50px;
+    gap: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 43, 35, 0.35);
+    padding: 30px; 
+}
+
+.contenedor-titulo-agregar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-titulo-agregar img {
+    width: 50px;
+    height: auto;
+}
+
+.titulo-agregar h1 {
+    color: #00594f;
+    font-size: 26pt;
+    margin: 0;
+}
+
+.titulo-agregar span {
+    color: #979797;
+    font-size: 12pt;
+}
+
+.contenido-form-agregar {
+    display: flex;
+    gap: 20px;
+}
+
+.datos-form-agregar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.subtitulo-form-agregar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.subtitulo-form-agregar img {
+    width: 30px;
+    height: auto;
+}
+
+.orden-form-agregar {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 5px;
+}
+
+.orden-form-agregar input,
+.orden-form-agregar select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+.boton-form-nuevo input{
+    align-content: center;
+    font-size: 14pt;
+}
+
+.boton-form-nuevo input{    
+    padding: 15px 25px;
+    text-decoration: none;
+    color: #ffffff;    
+    background:linear-gradient(110deg, #12e4a1, #2ce2b5ba);
+    border: rgba(128, 239, 189, 0.9) solid 1px;
+    border-radius: 15px;
+}
+
+.boton-form-nuevo input:hover{
+    background: #27a879;
 }
