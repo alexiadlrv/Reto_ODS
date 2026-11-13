@@ -93,8 +93,14 @@
 
          <nav>
             <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="contenedores.html">Contenedores</a></li>
+                <li><a href="index.php">Inicio</a></li>
+                <li>
+                    <a href="contenedores.php">Contenedores ▾</a>
+                    <ul class="submenu">
+                        <li><a href="contenedores.php#nuevo-contenedor-agregar">Añadir contenedor</a></li>
+                        <li><a href="editar-contenedor.php">Editar contenedor</a></li>
+                    </ul>
+                </li>
                 <li><a href="ODS.html">ODS</a></li>
                 <li><a href="contacto.php">Formulario</a></li>
              </ul>
