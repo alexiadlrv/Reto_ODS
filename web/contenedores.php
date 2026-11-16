@@ -101,7 +101,6 @@
                         <li><a href="editar-contenedor.php">Editar contenedor</a></li>
                     </ul>
                 </li>
-                <li><a href="ODS.html">ODS</a></li>
                 <li><a href="contacto.php">Formulario</a></li>
              </ul>
         </nav>
@@ -140,7 +139,7 @@
             <a href="#"> + Agregar Contenedor</a>
         </div>
     </div>
-
+    <section id="seccion-buscador" >
     <form action="" method="get" class="form-busqueda">
         <div class="campo">
             <div class="titulo-campo">
@@ -190,6 +189,7 @@
 
         <button type="submit" name="enviar" id="enviar"> Buscar Contenedor </button>
     </form>
+    </section>
 
     <?php if(!empty($errorFormulario)): ?>
         <div class="error-form">
