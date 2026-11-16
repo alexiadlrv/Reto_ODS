@@ -101,7 +101,7 @@
                         <li><a href="editar-lista.php">Editar contenedor</a></li>
                     </ul>
                 </li>
-                <li><a href="contacto.php">Formulario</a></li>
+                <li><a href="contacto.php">Contacto</a></li>
              </ul>
         </nav>
 
