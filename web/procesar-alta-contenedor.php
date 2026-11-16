@@ -28,7 +28,7 @@ $datos = [
 ];
 
 // 2. Validar
-$tiposValidos = ['vidrio', 'plastico', 'organico', 'papel', 'metal', 'resto'];
+$tiposValidos = ['vidrio', 'plastico', 'organico', 'papel'];
 
 if (strlen($datos['nombre']) < 3) {
     $errores[] = 'El nombre debe tener al menos 3 caracteres.';

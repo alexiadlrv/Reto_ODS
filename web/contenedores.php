@@ -374,8 +374,6 @@
                         <option value="papel">Papel y Cartón</option>
                         <option value="vidrio">Vidrio</option>
                         <option value="plastico">Plástico</option>
-                        <option value="metal">Metal</option>
-                        <option value="resto">Resto</option>
                     </select>
                 </div>
             </div>

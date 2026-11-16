@@ -28,7 +28,6 @@
                     <a href="contenedores.php">Contenedores ▾</a>
                     <ul class="submenu">
                         <li><a href="contenedores.php#nuevo-contenedor-agregar">Añadir contenedor</a></li>
-                        <!-- Enlace corregido a esta misma página -->
                         <li><a href="editar-lista.php">Editar contenedor</a></li>
                     </ul>
                 </li>
@@ -49,7 +48,7 @@
         </div>
     </div>
 
-    <div class="bloque-contenedores" style="margin-top: 30px;">
+    <div class="bloque-contenedores">
         <div class="contenedores">
 
             <?php if($contenedores === null): ?>
@@ -108,7 +107,6 @@
                         <strong id="porcentaje"><?php echo intval($c["llenado"])?>%</strong>
                     </div>
 
-                    <!-- Boton que lleva a la pagina de editar con el ID correcto -->
                     <div class="detalles">
                         <a href="editar-contenedor.php?id=<?php echo intval($c['id']); ?>">Editar este contenedor</a>
                     </div>
