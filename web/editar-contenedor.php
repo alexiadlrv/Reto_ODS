@@ -65,15 +65,14 @@
         <div class="error-form">
             <?php echo htmlspecialchars($error); ?>
         </div>
+
         <div style="margin: 30px 50px;">
             <a href="contenedores.php" class="boton">Volver al listado</a>
         </div>
     <?php elseif ($contenedor): ?>
         
-        <!-- Formulario con el mismo ID que usas en el alta para reutilizar los estilos CSS -->
         <form action="procesar-edicion-contenedor.php" method="post" id="nuevo-contenedor-agregar" class="form-edicion">
             
-            <!-- Campo oculto necesario para el PUT -->
             <input type="hidden" name="id" value="<?php echo intval($contenedor['id']); ?>">
 
             <div class="contenedor-titulo-agregar">
