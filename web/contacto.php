@@ -15,7 +15,7 @@
                 background-size: cover;
                 background-position: center;
                 background-attachment: fixed;
-                min-height: 100vh;
+                
             }
 
             .contenedor {
@@ -170,9 +170,8 @@
             <nav>
                 <ul class="menu">
                     <li><a href="index.html">Inicio</a></li>
-                    <li><a href="contenedores.html">Contenedores</a></li>
-                    <li><a href="ODS.html">ODS</a></li>   
-                    <li><a href="formulalario.html">formulario</a></li>
+                    <li><a href="contenedores.php">Contenedores</a></li>  
+                    <li><a href="#">contacto</a></li>
                 </ul>
             </nav>
 
