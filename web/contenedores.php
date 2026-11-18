@@ -373,6 +373,8 @@
                 <div class="orden-form-agregar">
                     <label for="tipo">Tipo de residuo</label>
                     <select name="tipo" id="tipo">
+
+                        <option value="">Selecciona un tipo...</option>
                         <option value="organico">Orgánico</option>
                         <option value="papel">Papel y Cartón</option>
                         <option value="vidrio">Vidrio</option>
@@ -396,7 +398,7 @@
 
                 <div class="orden-form-agregar">
                     <label for="fechaInstalacion">Fecha de Instalación</label>
-                    <input type="date" name="fechaInstalacion" id="fechaInstalacion">
+                    <input type="date" name="fechaInstalacion" id="fechaInstalacion"> <!-- El campo es de fecha, pero tambien tenemos la validacion PHP hecha -->
                 </div>
             </div>
         </div>
@@ -410,7 +412,7 @@
             <div class="contenido-form-agregar">
                 <div class="orden-form-agregar">
                     <label for="color">Color</label>
-                    <input type="color" name="color" id="color" value="#2e7d32" >
+                    <input type="color" name="color" id="color" value="#2e7d32">
                 </div>
             </div>
         </div>
