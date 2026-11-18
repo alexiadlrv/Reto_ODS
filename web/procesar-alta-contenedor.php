@@ -11,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $errores = [];
 
-// 1. Comprobar que los campos obligatorios llegan en el POST
 $camposObligatorios = ['nombre', 'tipo', 'ubicacion', 'fechaInstalacion', 'color'];
 foreach ($camposObligatorios as $campo) {
     if (!isset($_POST[$campo])) {
@@ -27,7 +26,6 @@ $datos = [
     'color' => $_POST['color'] ?? ''
 ];
 
-// 2. Validar
 $tiposValidos = ['vidrio', 'plastico', 'organico', 'papel'];
 
 if (strlen($datos['nombre']) < 3) {
@@ -46,10 +44,13 @@ if (strlen($datos['ubicacion']) < 3) {
     $errores[] = 'La ubicación no puede tener más de 100 caracteres.';
 }
 
-if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $datos['fechaInstalacion'])) {
+$patronFecha = '/^#[0-9a-fA-F]{6}$/';
+$patronColor = '/^#[0-9a-fA-F]{6}$/';
+
+if (!preg_match($patronFecha, $datos['fechaInstalacion'])) {
     $errores[] = 'La fecha de instalación no es válida.';
 }
-if (!preg_match('/^#[0-9a-fA-F]{6}$/', $datos['color'])) {
+if (!preg_match($patronColor, $datos['color'])) {
     $errores[] = 'El color no es válido.';
 }
 
@@ -59,20 +60,16 @@ if (!empty($errores)) {
     exit;
 }
 
-// 3. Llenado aleatorio de 1 a 100
 $datos['llenado'] = rand(1, 100);
 
-// 4. Estado automatico según llenado y probabilidad
 if ($datos['llenado'] > 80) {
     $datos['estado'] = 'lleno';
 } elseif (rand(1, 5) === 1) {
-    // 1 probabilidad entre 5 de estar fuera de servicio
     $datos['estado'] = 'fuera de servicio';
 } else {
     $datos['estado'] = 'operativo';
 }
 
-// 5. Llamar a la API
 $respuesta = llamarApi('POST', API_URL, $datos);
 
 if ($respuesta === null) {
