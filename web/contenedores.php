@@ -142,53 +142,59 @@
     </div>
 
     <form action="" method="get" class="form-busqueda">
-        <div class="campo">
-            <div class="titulo-campo">
-                <img src="multimedia/buscador.png" alt="buscador">
-                <label for="id">Identificador</label>
+        <div class="contenedor-campos">
+            <div class="campo">
+                <div class="titulo-campo">
+                    <img src="multimedia/buscador.png" alt="buscador">
+                    <label for="id">Identificador</label>
+                </div>
+
+                <input type="text" name="id" id="id" placeholder="Ej. 1" value = "<?php echo htmlspecialchars($id ?? ""); ?>">
             </div>
 
-            <input type="text" name="id" id="id" placeholder="Ej. 1" value = "<?php echo htmlspecialchars($id ?? ""); ?>">
-        </div>
-
-        <div class="campo">
-            <div class="titulo-campo">
-                <img src="multimedia/lugar.png" alt="ubicacion">
-                <label for="ubicacion">Ubicacion</label>
-            </div>
-            <input type="text" id="ubicacion" name="ubicacion" placeholder="Ej. Gran Via, Bilbao" value = "<?php echo htmlspecialchars($ubicacion ?? ""); ?>">
-        </div>
-
-        <div class="campo">
-            <div class="titulo-campo">
-                <img src="multimedia/tipo.png" alt="tipo">
-                <label for="tipo">Tipo de Residuo</label>
+            <div class="campo">
+                <div class="titulo-campo">
+                    <img src="multimedia/lugar.png" alt="ubicacion">
+                    <label for="ubicacion">Ubicacion</label>
+                </div>
+                <input type="text" id="ubicacion" name="ubicacion" placeholder="Ej. Gran Via, Bilbao" value = "<?php echo htmlspecialchars($ubicacion ?? ""); ?>">
             </div>
 
-            <select name="tipo" id="tipo">
-                <option value="">Todos los Tipos</option>
-                <option value="plastico" <?php echo seleccionar("tipo", "plastico"); ?>>Plastico</option>
-                <option value="papel" <?php echo seleccionar("tipo", "papel"); ?>>Papel y Carton</option>
-                <option value="vidrio" <?php echo seleccionar("tipo", "vidrio"); ?>>Vidrio</option>
-                <option value="organico" <?php echo seleccionar("tipo", "organico"); ?>>Organico</option>
-            </select>
-        </div>
+            <div class="campo">
+                <div class="titulo-campo">
+                    <img src="multimedia/tipo.png" alt="tipo">
+                    <label for="tipo">Tipo de Residuo</label>
+                </div>
 
-        <div class="campo">
-            <div class="titulo-campo">
-                <img src="multimedia/estado.png" alt="estado">
-                <label for="estado">Estado</label>
+                <select name="tipo" id="tipo">
+                    <option value="">Todos los Tipos</option>
+                    <option value="plastico" <?php echo seleccionar("tipo", "plastico"); ?>>Plastico</option>
+                    <option value="papel" <?php echo seleccionar("tipo", "papel"); ?>>Papel y Carton</option>
+                    <option value="vidrio" <?php echo seleccionar("tipo", "vidrio"); ?>>Vidrio</option>
+                    <option value="organico" <?php echo seleccionar("tipo", "organico"); ?>>Organico</option>
+                </select>
             </div>
 
-            <select name="estado" id="estado">
-                <option value="">Todos los Tipos</option>
-                <option value="operativo" <?php echo seleccionar("estado", "operativo"); ?>>Operativo</option>
-                <option value="lleno" <?php echo seleccionar("estado", "lleno"); ?>>Lleno</option>
-                <option value="averiado" <?php echo seleccionar("estado", "averiado"); ?>>Fuera de Servicio</option>
-            </select>
+            <div class="campo">
+                <div class="titulo-campo">
+                    <img src="multimedia/estado.png" alt="estado">
+                    <label for="estado">Estado</label>
+                </div>
+
+                <select name="estado" id="estado">
+                    <option value="">Todos los Tipos</option>
+                    <option value="operativo" <?php echo seleccionar("estado", "operativo"); ?>>Operativo</option>
+                    <option value="lleno" <?php echo seleccionar("estado", "lleno"); ?>>Lleno</option>
+                    <option value="averiado" <?php echo seleccionar("estado", "averiado"); ?>>Fuera de Servicio</option>
+                </select>
+            </div>
+
+            <button type="submit" name="enviar" id="enviar"> Buscar Contenedor </button>
         </div>
 
-        <button type="submit" name="enviar" id="enviar"> Buscar Contenedor </button>
+        <div class="advice">
+            <p>Si no te sabes el Identificador haz una busqueda general dejandolo en blanco</p>
+        </div>
     </form>
 
     <?php if(!empty($errorFormulario)): ?>
@@ -354,7 +360,7 @@
 
         <div class="datos-form-agregar">
             <div class="subtitulo-form-agregar">
-                <img src="multimedia/icono-verde.png" alt="basura">
+                <img src="multimedia/nube.png" alt="basura">
                 <p>Información General</p>
             </div>
 
