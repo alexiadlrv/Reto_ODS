@@ -245,7 +245,7 @@ body{
     gap: 10px;
 }
 
-.titulo-contenedores, .sensor, .estado, .calle, .nivel{
+.titulo-contenedores, .sensor, .estado, .calle, .nivel, .detalles{
     margin: 25px 20px;
 }
 
@@ -268,6 +268,23 @@ body{
     color: #000;
 }
 
+.detalles a{
+    display: block;
+    width: 100%;
+    background-color: #ffffff;
+    border: #028656 solid 1px;
+    padding: 10px;
+    border-radius: 25px;
+    cursor: pointer;
+    text-decoration: none;
+    color: #26cd90;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.detalles a:hover{
+    background-color: #efefef;
+}
 
 
 /* Contenido Funcion */
