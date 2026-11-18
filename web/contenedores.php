@@ -364,13 +364,11 @@
             <div class="contenido-form-agregar">
                 <div class="orden-form-agregar">
                     <label for="nombre">Identificador del Contenedor</label>
-                    <!-- Quitado required y minlength/maxlength para que valide PHP -->
                     <input type="text" name="nombre" id="nombre">
                 </div>
 
                 <div class="orden-form-agregar">
                     <label for="tipo">Tipo de residuo</label>
-                    <!-- Quitado required -->
                     <select name="tipo" id="tipo">
                         <option value="">Selecciona un tipo...</option>
                         <option value="organico">Orgánico</option>
@@ -391,13 +389,11 @@
             <div class="contenido-form-agregar">
                 <div class="orden-form-agregar">
                     <label for="ubicacion">Dirección</label>
-                    <!-- Quitado required -->
                     <input type="text" name="ubicacion" id="ubicacion">
                 </div>
 
                 <div class="orden-form-agregar">
                     <label for="fechaInstalacion">Fecha de Instalación</label>
-                    <!-- Quitado required -->
                     <input type="date" name="fechaInstalacion" id="fechaInstalacion">
                 </div>
             </div>
@@ -412,7 +408,6 @@
             <div class="contenido-form-agregar">
                 <div class="orden-form-agregar">
                     <label for="color">Color</label>
-                    <!-- Quitado required -->
                     <input type="color" name="color" id="color" value="#2e7d32">
                 </div>
             </div>
