@@ -98,7 +98,7 @@
                     <a href="contenedores.php">Contenedores ▾</a>
                     <ul class="submenu">
                         <li><a href="contenedores.php#nuevo-contenedor-agregar">Añadir contenedor</a></li>
-                        <li><a href="editar-contenedor.php">Editar contenedor</a></li>
+                        <li><a href="editar-lista.php">Editar contenedor</a></li>
                     </ul>
                 </li>
                 <li><a href="ODS.html">ODS</a></li>
@@ -377,8 +377,6 @@
                         <option value="papel">Papel y Cartón</option>
                         <option value="vidrio">Vidrio</option>
                         <option value="plastico">Plástico</option>
-                        <option value="metal">Metal</option>
-                        <option value="resto">Resto</option>
                     </select>
                 </div>
             </div>

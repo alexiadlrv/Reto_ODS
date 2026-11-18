@@ -97,13 +97,13 @@ body{
     padding: 15px 25px;
     text-decoration: none;
     color: #ffffff;    
-    background:linear-gradient(110deg, #12e4a1, #2ce2b5ba);
+    background-color: #19d46d;
     border: rgba(128, 239, 189, 0.9) solid 1px;
     border-radius: 15px;
 }
 
 .boton-añadir a:hover{
-    background: #27a879;
+    background: #1c8a4e;
 }
 
 
@@ -155,7 +155,7 @@ body{
 }
 
 .form-busqueda button{
-    background:linear-gradient(110deg, #12e4a1, #2ce2b5ba);
+    background-color: #19d46d;
     color: #fff;
     border: none;
     font-weight: bold;
@@ -176,7 +176,7 @@ body{
 }
 
 .form-busqueda button:hover{
-    background: #27a879;
+    background: #1c8a4e;
 }
 
 
@@ -190,7 +190,7 @@ body{
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin: 0 50px;
+    margin: 30px 50px;
     gap: 20px;
 }
 

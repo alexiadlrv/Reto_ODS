@@ -1,20 +1,23 @@
 <?php
-require 'api.php';
 
-$id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
-$contenedor = null;
-$error = '';
+    require 'api.php';
 
-if ($id > 0) {
-    $contenedor = llamarApi('GET', API_URL . '/' . $id);
-    if ($contenedor === null) {
-        $error = 'No se pudo conectar con la API. ¿Está arrancada?';
-    } elseif (isset($contenedor['error'])) {
-        $error = 'No existe ese contenedor.';
-        $contenedor = null;
+    $id = isset($_GET['id']) ? (int)$_GET['id'] : 0;
+    $contenedor = null;
+    $error = '';
+
+    if ($id > 0) {
+        $contenedor = llamarApi('GET', API_URL . '/' . $id);
+        if ($contenedor === null) {
+            $error = 'No se pudo conectar con la API. ¿Está arrancada?';
+        } elseif (isset($contenedor['error'])) {
+            $error = 'No existe ese contenedor.';
+            $contenedor = null;
+        }
     }
-}
+
 ?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -33,8 +36,14 @@ if ($id > 0) {
 
          <nav>
             <ul class="menu">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="contenedores.php">Contenedores</a></li>
+                <li><a href="index.php">Inicio</a></li>
+                <li>
+                    <a href="contenedores.php">Contenedores ▾</a>
+                    <ul class="submenu">
+                        <li><a href="contenedores.php#nuevo-contenedor-agregar">Añadir contenedor</a></li>
+                        <li><a href="editar-lista.php">Editar contenedor</a></li>
+                    </ul>
+                </li>
                 <li><a href="ODS.html">ODS</a></li>
                 <li><a href="contacto.php">Formulario</a></li>
              </ul>
@@ -56,15 +65,14 @@ if ($id > 0) {
         <div class="error-form">
             <?php echo htmlspecialchars($error); ?>
         </div>
+
         <div style="margin: 30px 50px;">
             <a href="contenedores.php" class="boton">Volver al listado</a>
         </div>
     <?php elseif ($contenedor): ?>
         
-        <!-- Formulario con el mismo ID que usas en el alta para reutilizar los estilos CSS -->
         <form action="procesar-edicion-contenedor.php" method="post" id="nuevo-contenedor-agregar" class="form-edicion">
             
-            <!-- Campo oculto necesario para el PUT -->
             <input type="hidden" name="id" value="<?php echo intval($contenedor['id']); ?>">
 
             <div class="contenedor-titulo-agregar">
