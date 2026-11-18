@@ -137,7 +137,7 @@
         </div>
 
         <div class="boton-añadir">
-            <a href="#"> + Agregar Contenedor</a>
+            <a href="#nuevo-contenedor-agregar"> + Agregar Contenedor</a>
         </div>
     </div>
 
@@ -258,9 +258,6 @@
                         <strong id="porcentaje"><?php echo intval($c["llenado"])?>%</strong>
                     </div>
 
-                    <div class="detalles">
-                        <a href="detalle.php?id=<?php echo intval($c['id']); ?>"> Ver detalles</a>
-                    </div>
                 </div>
 
                 <?php endforeach; ?>

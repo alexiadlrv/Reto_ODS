@@ -29,7 +29,7 @@ $datos = [
 ];
 
 // 2. Validar
-$tiposValidos = ['vidrio', 'plastico', 'organico', 'papel', 'metal', 'resto'];
+$tiposValidos = ['vidrio', 'plastico', 'organico'];
 
 if ($id <= 0) {
     $errores[] = 'Falta el id del contenedor.';
