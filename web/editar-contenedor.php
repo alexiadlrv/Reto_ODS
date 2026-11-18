@@ -94,12 +94,12 @@
                 <div class="contenido-form-agregar">
                     <div class="orden-form-agregar">
                         <label for="nombre">Identificador del Contenedor</label>
-                        <input type="text" name="nombre" id="nombre" value="<?php echo htmlspecialchars($contenedor['nombre']); ?>" required minlength="3" maxlength="50">
+                        <input type="text" name="nombre" id="nombre" value="<?php echo htmlspecialchars($contenedor['nombre']); ?>" >
                     </div>
 
                     <div class="orden-form-agregar">
                         <label for="tipo">Tipo de residuo</label>
-                        <select name="tipo" id="tipo" required>
+                        <select name="tipo" id="tipo" >
                             <?php 
                             $tipos = ['organico' => 'Orgánico', 'papel' => 'Papel y Cartón', 'vidrio' => 'Vidrio', 'plastico' => 'Plástico', 'metal' => 'Metal', 'resto' => 'Resto'];
                             foreach ($tipos as $valor => $texto) {
@@ -121,12 +121,12 @@
                 <div class="contenido-form-agregar">
                     <div class="orden-form-agregar">
                         <label for="ubicacion">Dirección</label>
-                        <input type="text" name="ubicacion" id="ubicacion" value="<?php echo htmlspecialchars($contenedor['ubicacion']); ?>" required minlength="3" maxlength="100">
+                        <input type="text" name="ubicacion" id="ubicacion" value="<?php echo htmlspecialchars($contenedor['ubicacion']); ?>">
                     </div>
 
                     <div class="orden-form-agregar">
                         <label for="fechaInstalacion">Fecha de Instalación</label>
-                        <input type="date" name="fechaInstalacion" id="fechaInstalacion" value="<?php echo htmlspecialchars($contenedor['fechaInstalacion']); ?>" required>
+                        <input type="date" name="fechaInstalacion" id="fechaInstalacion" value="<?php echo htmlspecialchars($contenedor['fechaInstalacion']); ?>" >
                     </div>
                 </div>
             </div>
@@ -140,7 +140,7 @@
                 <div class="contenido-form-agregar">
                     <div class="orden-form-agregar">
                         <label for="color">Color</label>
-                        <input type="color" name="color" id="color" value="<?php echo htmlspecialchars($contenedor['color']); ?>" required>
+                        <input type="color" name="color" id="color" value="<?php echo htmlspecialchars($contenedor['color']); ?>">
                     </div>
                 </div>
             </div>
@@ -151,7 +151,6 @@
             </div>
         </form>
 
-        <!-- JS para procesar el guardado sin mostrar JSON crudo -->
         <script>
         document.querySelector('.form-edicion').addEventListener('submit', function (e) {
             e.preventDefault();
