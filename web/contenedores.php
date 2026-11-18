@@ -367,12 +367,13 @@
             <div class="contenido-form-agregar">
                 <div class="orden-form-agregar">
                     <label for="nombre">Identificador del Contenedor</label>
-                    <input type="text" name="nombre" id="nombre" required minlength="3" maxlength="50">
+                    <input type="text" name="nombre" id="nombre">
                 </div>
 
                 <div class="orden-form-agregar">
                     <label for="tipo">Tipo de residuo</label>
-                    <select name="tipo" id="tipo" required>
+                    <select name="tipo" id="tipo">
+                        <option value="">Selecciona un tipo...</option>
                         <option value="organico">Orgánico</option>
                         <option value="papel">Papel y Cartón</option>
                         <option value="vidrio">Vidrio</option>
@@ -391,12 +392,12 @@
             <div class="contenido-form-agregar">
                 <div class="orden-form-agregar">
                     <label for="ubicacion">Dirección</label>
-                    <input type="text" name="ubicacion" id="ubicacion" required minlength="3" maxlength="100">
+                    <input type="text" name="ubicacion" id="ubicacion">
                 </div>
 
                 <div class="orden-form-agregar">
                     <label for="fechaInstalacion">Fecha de Instalación</label>
-                    <input type="date" name="fechaInstalacion" id="fechaInstalacion" required>
+                    <input type="date" name="fechaInstalacion" id="fechaInstalacion">
                 </div>
             </div>
         </div>
@@ -410,7 +411,7 @@
             <div class="contenido-form-agregar">
                 <div class="orden-form-agregar">
                     <label for="color">Color</label>
-                    <input type="color" name="color" id="color" value="#2e7d32" required>
+                    <input type="color" name="color" id="color" value="#2e7d32">
                 </div>
             </div>
         </div>
