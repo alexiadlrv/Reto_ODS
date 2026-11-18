@@ -397,7 +397,7 @@
 
                 <div class="orden-form-agregar">
                     <label for="fechaInstalacion">Fecha de Instalación</label>
-                    <input type="date" name="fechaInstalacion" id="fechaInstalacion">
+                    <input type="date" name="fechaInstalacion" id="fechaInstalacion"> <!-- El campo es de fecha, pero tambien tenemos la validacion PHP hecha -->
                 </div>
             </div>
         </div>
