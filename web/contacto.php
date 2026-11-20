@@ -5,8 +5,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link href="CSS/style.css" rel="stylesheet" type="text/css">
+<<<<<<< HEAD
         <link  href="CSS/contacto.css" rel="stylesheet" type="text/css">
 
+=======
+        <link href="CSS/contacto.css" rel="stylesheet" type="text/css">
+>>>>>>> feature/videoIndex
     </head>
     <body>
         <header>
