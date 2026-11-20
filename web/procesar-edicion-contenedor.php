@@ -11,7 +11,6 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $errores = [];
 
-// 1. Comprobar que los campos obligatorios llegan en el POST
 $camposObligatorios = ['id', 'nombre', 'tipo', 'ubicacion', 'fechaInstalacion', 'color'];
 foreach ($camposObligatorios as $campo) {
     if (!isset($_POST[$campo])) {
@@ -28,8 +27,7 @@ $datos = [
     'color' => $_POST['color'] ?? ''
 ];
 
-// 2. Validar
-$tiposValidos = ['vidrio', 'plastico', 'organico', 'papel', 'metal', 'resto'];
+$tiposValidos = ['vidrio', 'plastico', 'organico'];
 
 if ($id <= 0) {
     $errores[] = 'Falta el id del contenedor.';
@@ -51,10 +49,14 @@ if (strlen($datos['ubicacion']) < 3) {
     $errores[] = 'La ubicación no puede tener más de 100 caracteres.';
 }
 
-if (!preg_match('/^\d{4}-\d{2}-\d{2}$/', $datos['fechaInstalacion'])) {
+$patronFecha = '/^#[0-9a-fA-F]{6}$/';
+$patronColor = '/^#[0-9a-fA-F]{6}$/';
+
+
+if (!preg_match($patronFecha, $datos['fechaInstalacion'])) {
     $errores[] = 'La fecha de instalación no es válida.';
 }
-if (!preg_match('/^#[0-9a-fA-F]{6}$/', $datos['color'])) {
+if (!preg_match($patronColor, $datos['color'])) {
     $errores[] = 'El color no es válido.';
 }
 
@@ -64,7 +66,6 @@ if (!empty($errores)) {
     exit;
 }
 
-// 3. Llamar a la API
 $respuesta = llamarApi('PUT', API_URL . '/' . $id, $datos);
 
 if ($respuesta === null) {

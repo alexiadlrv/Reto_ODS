@@ -136,58 +136,64 @@
         </div>
 
         <div class="boton-añadir">
-            <a href="#"> + Agregar Contenedor</a>
+            <a href="#nuevo-contenedor-agregar"> + Agregar Contenedor</a>
         </div>
     </div>
     <section id="seccion-buscador" >
     <form action="" method="get" class="form-busqueda">
-        <div class="campo">
-            <div class="titulo-campo">
-                <img src="multimedia/buscador.png" alt="buscador">
-                <label for="id">Identificador</label>
+        <div class="contenedor-campos">
+            <div class="campo">
+                <div class="titulo-campo">
+                    <img src="multimedia/buscador.png" alt="buscador">
+                    <label for="id">Identificador</label>
+                </div>
+
+                <input type="text" name="id" id="id" placeholder="Ej. 1" value = "<?php echo htmlspecialchars($id ?? ""); ?>">
             </div>
 
-            <input type="text" name="id" id="id" placeholder="Ej. 1" value = "<?php echo htmlspecialchars($id ?? ""); ?>">
-        </div>
-
-        <div class="campo">
-            <div class="titulo-campo">
-                <img src="multimedia/lugar.png" alt="ubicacion">
-                <label for="ubicacion">Ubicacion</label>
-            </div>
-            <input type="text" id="ubicacion" name="ubicacion" placeholder="Ej. Gran Via, Bilbao" value = "<?php echo htmlspecialchars($ubicacion ?? ""); ?>">
-        </div>
-
-        <div class="campo">
-            <div class="titulo-campo">
-                <img src="multimedia/tipo.png" alt="tipo">
-                <label for="tipo">Tipo de Residuo</label>
+            <div class="campo">
+                <div class="titulo-campo">
+                    <img src="multimedia/lugar.png" alt="ubicacion">
+                    <label for="ubicacion">Ubicacion</label>
+                </div>
+                <input type="text" id="ubicacion" name="ubicacion" placeholder="Ej. Gran Via, Bilbao" value = "<?php echo htmlspecialchars($ubicacion ?? ""); ?>">
             </div>
 
-            <select name="tipo" id="tipo">
-                <option value="">Todos los Tipos</option>
-                <option value="plastico" <?php echo seleccionar("tipo", "plastico"); ?>>Plastico</option>
-                <option value="papel" <?php echo seleccionar("tipo", "papel"); ?>>Papel y Carton</option>
-                <option value="vidrio" <?php echo seleccionar("tipo", "vidrio"); ?>>Vidrio</option>
-                <option value="organico" <?php echo seleccionar("tipo", "organico"); ?>>Organico</option>
-            </select>
-        </div>
+            <div class="campo">
+                <div class="titulo-campo">
+                    <img src="multimedia/tipo.png" alt="tipo">
+                    <label for="tipo">Tipo de Residuo</label>
+                </div>
 
-        <div class="campo">
-            <div class="titulo-campo">
-                <img src="multimedia/estado.png" alt="estado">
-                <label for="estado">Estado</label>
+                <select name="tipo" id="tipo">
+                    <option value="">Todos los Tipos</option>
+                    <option value="plastico" <?php echo seleccionar("tipo", "plastico"); ?>>Plastico</option>
+                    <option value="papel" <?php echo seleccionar("tipo", "papel"); ?>>Papel y Carton</option>
+                    <option value="vidrio" <?php echo seleccionar("tipo", "vidrio"); ?>>Vidrio</option>
+                    <option value="organico" <?php echo seleccionar("tipo", "organico"); ?>>Organico</option>
+                </select>
             </div>
 
-            <select name="estado" id="estado">
-                <option value="">Todos los Tipos</option>
-                <option value="operativo" <?php echo seleccionar("estado", "operativo"); ?>>Operativo</option>
-                <option value="lleno" <?php echo seleccionar("estado", "lleno"); ?>>Lleno</option>
-                <option value="averiado" <?php echo seleccionar("estado", "averiado"); ?>>Fuera de Servicio</option>
-            </select>
+            <div class="campo">
+                <div class="titulo-campo">
+                    <img src="multimedia/estado.png" alt="estado">
+                    <label for="estado">Estado</label>
+                </div>
+
+                <select name="estado" id="estado">
+                    <option value="">Todos los Tipos</option>
+                    <option value="operativo" <?php echo seleccionar("estado", "operativo"); ?>>Operativo</option>
+                    <option value="lleno" <?php echo seleccionar("estado", "lleno"); ?>>Lleno</option>
+                    <option value="averiado" <?php echo seleccionar("estado", "averiado"); ?>>Fuera de Servicio</option>
+                </select>
+            </div>
+
+            <button type="submit" name="enviar" id="enviar"> Buscar Contenedor </button>
         </div>
 
-        <button type="submit" name="enviar" id="enviar"> Buscar Contenedor </button>
+        <div class="advice">
+            <p>Si no te sabes el Identificador haz una busqueda general dejandolo en blanco</p>
+        </div>
     </form>
     </section>
 
@@ -258,9 +264,6 @@
                         <strong id="porcentaje"><?php echo intval($c["llenado"])?>%</strong>
                     </div>
 
-                    <div class="detalles">
-                        <a href="detalle.php?id=<?php echo intval($c['id']); ?>"> Ver detalles</a>
-                    </div>
                 </div>
 
                 <?php endforeach; ?>
@@ -357,19 +360,20 @@
 
         <div class="datos-form-agregar">
             <div class="subtitulo-form-agregar">
-                <img src="multimedia/icono-verde.png" alt="basura">
+                <img src="multimedia/nube.png" alt="basura">
                 <p>Información General</p>
             </div>
 
             <div class="contenido-form-agregar">
                 <div class="orden-form-agregar">
                     <label for="nombre">Identificador del Contenedor</label>
-                    <input type="text" name="nombre" id="nombre" required minlength="3" maxlength="50">
+                    <input type="text" name="nombre" id="nombre">
                 </div>
 
                 <div class="orden-form-agregar">
                     <label for="tipo">Tipo de residuo</label>
-                    <select name="tipo" id="tipo" required>
+                    <select name="tipo" id="tipo">
+                        <option value="">Selecciona un tipo...</option>
                         <option value="organico">Orgánico</option>
                         <option value="papel">Papel y Cartón</option>
                         <option value="vidrio">Vidrio</option>
@@ -388,12 +392,12 @@
             <div class="contenido-form-agregar">
                 <div class="orden-form-agregar">
                     <label for="ubicacion">Dirección</label>
-                    <input type="text" name="ubicacion" id="ubicacion" required minlength="3" maxlength="100">
+                    <input type="text" name="ubicacion" id="ubicacion">
                 </div>
 
                 <div class="orden-form-agregar">
                     <label for="fechaInstalacion">Fecha de Instalación</label>
-                    <input type="date" name="fechaInstalacion" id="fechaInstalacion" required>
+                    <input type="date" name="fechaInstalacion" id="fechaInstalacion"> <!-- El campo es de fecha, pero tambien tenemos la validacion PHP hecha -->
                 </div>
             </div>
         </div>
@@ -407,7 +411,7 @@
             <div class="contenido-form-agregar">
                 <div class="orden-form-agregar">
                     <label for="color">Color</label>
-                    <input type="color" name="color" id="color" value="#2e7d32" required>
+                    <input type="color" name="color" id="color" value="#2e7d32">
                 </div>
             </div>
         </div>
