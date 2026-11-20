@@ -28,7 +28,7 @@
             <p class="etiqueta">ODS 11 - Ciudades y Comunidades Sostenibles</p>
             <h1>Digitalización de <span>Contenedores Inteligentes</span> para los ODS</h1>
             <p>Nuestro proyecto se enfoca en: Ciudades y Comunidades Sostenibles, a través de la implementación de contenedores de basura inteligentes que optimizan la recogida de residuos, reducen la contaminación y mejoran la eficiencia urbana.</p>
-            <a href="#ods" class="boton">Conoce más sobre el ODS 11</a>
+            <a href="#seccionVideo" class="boton">Conoce más sobre Nuestro proyecto</a>
         </div>
         <div class="portada-imagen">
             <img src="multimedia/imgInicio.png" alt="Cuatro contenedores inteligentes: envases, papel y cartón, vidrio y orgánico">
@@ -40,50 +40,60 @@
             <h2>Los Objetivos de Desarrollo Disponible</h2>
             <p>Nuestro proyecto a varios ODS para un futuro mas sosntenible</p>
         </div>
-        
+
         <div class="contenedoresHijosods">
             <div class="contenedores-ods">
-                    <div class="imagen-contenedor">
-                        <img src="multimedia/ods11.png">
-                    </div>
-                    <div class="texto-ods">
-                        <h2>Ciudades y Comunidades Sostenibles</h2>
-                        <p>Hacer que las ciudades y los asentamientos humanos sean inclusivos,
-                        seguros,resilientes y sostenibles</p>
-                    </div>
-            </div>
-            <div class="contenedores-ods">
-                    <div class="imagen-contenedor">
-                        <img src="multimedia/ods12.png">
-                    </div>
-                    <div class="texto-ods">
-                        <h2>Produccion y consumo Resonsables</h2>
-                        <p>Garantizar modalidades de consumo y produccion sostenibles</p>
-                    </div>
+                <div class="imagen-contenedor">
+                    <canvas class="canvas-ods" width="84" height="84" data-ods="11" data-color="#f39c12"></canvas>
+                </div>
+                <div class="texto-ods">
+                    <h2>Ciudades y Comunidades Sostenibles</h2>
+                    <p>Hacer que las ciudades y los asentamientos humanos sean inclusivos,
+                    seguros,resilientes y sostenibles</p>
+                </div>
             </div>
 
-           
             <div class="contenedores-ods">
-                    <div class="imagen-contenedor">
-                        <img src="multimedia/ods13.jpg">
-                    </div>
-                    <div class="texto-ods">
-                        <h2>Acción por el clima</h2>
-                        <p>Adoptar medidas urgentes para combatir el cambio climático y sus efectos<p>
-                    </div>
+                <div class="imagen-contenedor">
+                    <canvas class="canvas-ods" width="84" height="84" data-ods="12" data-color="#c88a1e"></canvas>
+                </div>
+                <div class="texto-ods">
+                    <h2>Produccion y consumo Resonsables</h2>
+                    <p>Garantizar modalidades de consumo y produccion sostenibles</p>
+                </div>
             </div>
 
-           
             <div class="contenedores-ods">
-                    <div class="imagen-contenedor">
-                        <img src="multimedia/ods9.jpg">
-                    </div>
-                    <div class="texto-ods">
-                        <h2>Industria,innovacion e infraestructura</h2>
-                        <p>Construir infraestructuras resilientes promover la industrialización inclusiva y sostenible y fomentar la innovacion</p>
-                    </div>
+                <div class="imagen-contenedor">
+                    <canvas class="canvas-ods" width="84" height="84" data-ods="13" data-color="#3f7e44"></canvas>
+                </div>
+                <div class="texto-ods">
+                    <h2>Acción por el clima</h2>
+                    <p>Adoptar medidas urgentes para combatir el cambio climático y sus efectos</p>
+                </div>
             </div>
-    </div>    
+
+            <div class="contenedores-ods">
+                <div class="imagen-contenedor">
+                    <canvas class="canvas-ods" width="84" height="84" data-ods="9" data-color="#e86f2c"></canvas>
+                </div>
+                <div class="texto-ods">
+                    <h2>Industria,innovacion e infraestructura</h2>
+                    <p>Construir infraestructuras resilientes promover la industrialización inclusiva y sostenible y fomentar la innovacion</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="seccionVideo" id="seccionVideo">
+        <div class="textoVideo">
+            <h2>Nuestro proyecto en 1 minuto</h2>
+            <p>Cómo los contenedores inteligentes de ecocontenedores controbuyen al ODS11 y a otros objetivos</p>
+        </div>   
+            <video width="640" height="360" controls>
+                <source src="multimedia/EcoContenedores.mp4">
+            </video>
+          
     </section>
 
     <section class="buscador-contenedor">
@@ -97,12 +107,70 @@
         </div>
     </section>
 
-   
-
+    
     <footer id="contacto" class="footer">
          <p>EcoContenedores - Reto Digitalizamos los ODS</p>
         <p>Contacto: contacto@ecocontenedores.com</p>
     </footer>
+    <script>
+        function dibujarFormaODS(ctx, ods, color, size) {
+            ctx.clearRect(0, 0, size, size);
+
+            // Fondo del cuadro ODS
+            ctx.fillStyle = color;
+            ctx.beginPath();
+            ctx.roundRect(0, 0, size, size, 12);
+            ctx.fill();
+
+            // Número del ODS arriba a la izquierda
+            ctx.fillStyle = '#ffffff';
+            ctx.font = 'bold 18px Arial, sans-serif';
+            ctx.textAlign = 'left';
+            ctx.textBaseline = 'top';
+            ctx.fillText(ods, 9, 8);
+
+            // Formas sencillas blancas debajo del número
+            ctx.strokeStyle = '#ffffff';
+            ctx.fillStyle = '#ffffff';
+            ctx.lineWidth = 2.4;
+
+            if (ods === '11') {
+                // Edificios sencillos (ODS 11)
+                ctx.fillRect(16, 46, 14, 24);
+                ctx.fillRect(35, 36, 16, 34);
+                ctx.fillRect(56, 50, 12, 20);
+            } else if (ods === '12') {
+                // Dos óvalos / infinito (ODS 12)
+                ctx.beginPath();
+                ctx.ellipse(31, 54, 12, 9, 0, 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.ellipse(53, 54, 12, 9, 0, 0, Math.PI * 2);
+                ctx.stroke();
+            } else if (ods === '13') {
+                // Círculo con línea horizontal (ODS 13)
+                ctx.beginPath();
+                ctx.arc(42, 53, 16, 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.beginPath();
+                ctx.moveTo(26, 53);
+                ctx.lineTo(58, 53);
+                ctx.stroke();
+            } else if (ods === '9') {
+                // Bloques / cubos sencillos (ODS 9)
+                ctx.strokeRect(22, 42, 16, 16);
+                ctx.strokeRect(44, 42, 16, 16);
+                ctx.strokeRect(33, 28, 16, 16);
+            }
+        }
+
+        document.querySelectorAll('.canvas-ods').forEach((canvas) => {
+            const ctx = canvas.getContext('2d');
+            const ods = canvas.dataset.ods;
+            const color = canvas.dataset.color;
+            dibujarFormaODS(ctx, ods, color, canvas.width);
+        });
+    </script>
 
 </body>
 </html>
