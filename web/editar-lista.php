@@ -21,6 +21,9 @@
            <h2><img src="multimedia/icono.ico" class="logo"><span>Eco</span>Contenedores</h2>
         </div>
 
+         <button class="hamburguesa" aria-label="Abrir menú"
+            onclick="document.querySelector('.menu').classList.toggle('abierto')">☰
+        </button>
          <nav>
             <ul class="menu">
                 <li><a href="index.html">Inicio</a></li>
@@ -36,7 +39,7 @@
         </nav>
     </header>
 
-    <div class="contenedor-banner" style="height: 150px;">
+        <div class="contenedor-banner banner-corto">
         <div class="contenido-banner">
             <div class="titulo-banner">
                 <h1>Seleccionar <span>Contenedor</span></h1>
