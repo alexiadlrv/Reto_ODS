@@ -91,9 +91,13 @@
            <h2><img src="multimedia/icono.ico" class="logo"><span>Eco</span>Contenedores</h2>
         </div>
 
+        <button class="hamburguesa" aria-label="Abrir menú"
+             onclick="document.querySelector('.menu').classList.toggle('abierto')">☰
+        </button>
+
          <nav>
             <ul class="menu">
-                <li><a href="index.php">Inicio</a></li>
+                <li><a href="index.html">Inicio</a></li>
                 <li>
                     <a href="contenedores.php">Contenedores ▾</a>
                     <ul class="submenu">
@@ -101,8 +105,7 @@
                         <li><a href="editar-lista.php">Editar contenedor</a></li>
                     </ul>
                 </li>
-                <li><a href="ODS.html">ODS</a></li>
-                <li><a href="contacto.php">Formulario</a></li>
+                <li><a href="contacto.php">Contacto</a></li>
              </ul>
         </nav>
 
@@ -140,7 +143,7 @@
             <a href="#nuevo-contenedor-agregar"> + Agregar Contenedor</a>
         </div>
     </div>
-
+    <section id="seccion-buscador" >
     <form action="" method="get" class="form-busqueda">
         <div class="contenedor-campos">
             <div class="campo">
@@ -196,6 +199,7 @@
             <p>Si no te sabes el Identificador haz una busqueda general dejandolo en blanco</p>
         </div>
     </form>
+    </section>
 
     <?php if(!empty($errorFormulario)): ?>
         <div class="error-form">
