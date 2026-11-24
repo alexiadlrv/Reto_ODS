@@ -556,50 +556,76 @@ body{
 /* ---------- TABLET (769px - 1024px) ---------- */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
 
-    /* Banner */
+
         .contenido-banner {
         width: auto;
         flex: 1;
         margin: 0 40px;
     }
-    /* Título + botón añadir */
-    .bloque-añadir { margin: 30px 40px; gap: 20px; }
+  
+    .bloque-añadir {
+         margin: 30px 40px; gap: 20px;
+     }
 
-    /* Buscador: 2 campos por fila */
-    .form-busqueda { margin: 30px 40px; }
+   
+    .form-busqueda {
+         margin: 30px 40px;
+     }
 
-    .contenedor-campos { flex-wrap: wrap; gap: 20px; }
+    .contenedor-campos { 
+        flex-wrap: wrap; gap: 20px;
+     }
 
-    .campo { flex: 1 1 40%; }
+    .campo { 
+        flex: 1 1 40%; 
+    }
 
-    .error-form { margin: 30px 40px; }
+    .error-form { 
+        margin: 30px 40px;
+     }
 
-    /* Tarjetas de contenedores: 2 por fila */
-    .contenedores { margin: 30px 40px; }
+
+    .contenedores { 
+        margin: 30px 40px; 
+    }
 
     .contenido-contenedores {
         width: auto;
         flex: 1 1 40%;
     }
 
-    .imagen-contenedores img { width: 90%; }
+    .imagen-contenedores img { 
+        width: 90%; 
+    }
 
-    /* Cómo funciona */
+  
     .bloque-funcion {
         flex-direction: column;
         margin: 40px;
         gap: 20px;
     }
-    .datos { max-width: none; flex: 1; }
+    .datos {
+        max-width: none; flex: 1; 
+    }
 
-    /* Beneficios: 2 por fila y la imagen debajo */
-    .bloque-beneficios { margin: 0 40px 40px; }
+  
+    .bloque-beneficios {  
+        margin: 0 40px 40px; 
+    }
 
-    .contenedor-beneficios { flex-direction: column; }
+    .contenedor-beneficios {
+        
+        flex-direction: column; 
+    }
 
-    .beneficios { flex: none; flex-wrap: wrap; }
+    .beneficios { 
+        flex: none; flex-wrap: wrap;
+    
+    }
 
-    .datos-beneficios { flex: 1 1 40%; }
+    .datos-beneficios {       
+        flex: 1 1 40%;
+    }
 
     .imagen-grande {
         flex: none;
@@ -609,7 +635,9 @@ body{
     }
 
     /* Formulario nuevo contenedor */
-    #nuevo-contenedor-agregar { margin: 30px 40px; }
+    #nuevo-contenedor-agregar {
+        margin: 30px 40px;
+    }
 }
 
 /* ---------- MÓVIL (hasta 768px) ---------- */
@@ -627,9 +655,14 @@ body{
         margin: 0 25px;
     }
 
-    .titulo-banner { font-size: 20pt; }
+    .titulo-banner {
+         font-size: 20pt;
+     }
 
-    .parrafos-banner { font-size: 11pt; }
+    .parrafos-banner {
+         font-size: 11pt;
+     }
+
 
     /* Título + botón añadir */
     .bloque-añadir {
@@ -638,11 +671,17 @@ body{
         gap: 20px;
     }
 
-    .titulo-contenedor h2 { font-size: 17pt; }
+    .titulo-contenedor h2 {
+        font-size: 17pt;
+     }
 
-    .texto { font-size: 12pt; }
+    .texto { 
+        font-size: 12pt; 
+    }
     
-    .boton-añadir { font-size: 12pt; }
+    .boton-añadir { 
+        font-size: 12pt;
+     }
 
     .boton-añadir a {
         display: block;
@@ -658,47 +697,75 @@ body{
         gap: 20px;
     }
     
-    .form-busqueda button { padding: 12px 30px; }
+    .form-busqueda button {
+        padding: 12px 30px;
+    }
     
-    .advice p { font-size: 11pt; text-align: center; }
+    .advice p {
+        font-size: 11pt; text-align: center; 
+    }
 
-    .error-form { margin: 30px 25px; font-size: 12pt; }
+    .error-form { 
+        margin: 30px 25px; font-size: 12pt;
+     }
 
-    /* Tarjetas de contenedores: 1 por fila */
+
     
-    .contenedores { margin: 30px 25px; }
+    .contenedores {
+         margin: 30px 25px;
+     }
 
     .contenido-contenedores {
         width: auto;
         flex: 1 1 100%;
     }
     
-    .imagen-contenedores img { width: 90%; }
+    .imagen-contenedores img { 
+        width: 90%; 
+    }
 
-    .error { font-size: 13pt; }
+    .error {
+         font-size: 13pt; 
+    }
 
-    /* Cómo funciona */
+  
     .bloque-funcion {
         flex-direction: column;
         margin: 40px 25px;
         gap: 20px;
     }
     
-    .titulo-funcion h2 { font-size: 18pt; }
+    .titulo-funcion h2 {
+        font-size: 18pt; 
+        }
 
-    .titulo-funcion br { display: none; }
+    .titulo-funcion br {
+        display: none; 
+        }
 
-    .bloques { flex-direction: column; gap: 10px; }
+    .bloques {
+        flex-direction: column; gap: 10px; 
+        }
 
-    .datos { max-width: none; }
+    .datos {
+        max-width: none; 
+        }
 
-    /* Beneficios: tarjetas una debajo de otra */
-    .bloque-beneficios { margin: 0 25px 40px; }
+   
+    .bloque-beneficios { 
+        margin: 0 25px 40px;
+    }
 
-    .titulo-beneficios h2 { font-size: 17pt; }
+    .titulo-beneficios h2 {
+        font-size: 17pt; 
+        }
 
-    .contenedor-beneficios { flex-direction: column; }
+    .contenedor-beneficios {
+        flex-direction: column; 
+        }
     
+
+
     .beneficios {
         flex: none;
         flex-direction: column;
