@@ -30,7 +30,7 @@ $tiposValidos = ['vidrio', 'plastico', 'organico', 'papel'];
 
 if (strlen($datos['nombre']) < 3) {
     $errores[] = 'El nombre debe tener al menos 3 caracteres.';
-} elseif (strlen($datos['nombre']) > 50) {
+} elseif (mb_strlen($datos['nombre']) > 50) {
     $errores[] = 'El nombre no puede tener más de 50 caracteres.';
 }
 
@@ -44,12 +44,12 @@ if (strlen($datos['ubicacion']) < 3) {
     $errores[] = 'La ubicación no puede tener más de 100 caracteres.';
 }
 
-$patronFecha = '/^#[0-9a-fA-F]{6}$/'; // No se usa, porque el campo es de fecha
-$patronColor = '/^#[0-9a-fA-F]{6}$/';
+$patronColor = '/^#[0-9a-fA-F]{6}$/'    ;
 
-if (!preg_match($patronFecha, $datos['fechaInstalacion'])) {
-    $errores[] = 'La fecha de instalación no es válida.';
+if ($fecha && $fecha > new DateTime('today')) {
+    $errores[] = 'La fecha de instalación no puede ser futura.';
 }
+
 if (!preg_match($patronColor, $datos['color'])) {
     $errores[] = 'El color no es válido.';
 }
