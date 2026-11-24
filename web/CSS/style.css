@@ -323,31 +323,7 @@
     /*RESPONSIVE DE INDEX*/
 
     
-  /* ---------- TABLET (769px - 1024px) ---------- */
-    @media screen and (min-width: 769px) and (max-width: 1024px) {
 
-      header {
-        padding: 20px 30px;
-      }
-      .menu { gap: 10px; }
-      .menu li a { padding: 22px 14px; }
-
-      .portada-texto {
-        margin: 10px 40px;
-        max-width: 420px;
-      }
-      .portada h1 { font-size: 38px; }
-      .etiqueta { font-size: 16px; }
-
-      /* 4 tarjetas ODS -> 2 por fila */
-      .contenedoresHijosods {
-        flex-wrap: wrap;
-      }
-     
-
-      .buscador-contenedor { padding-left: 40px; }
-      .buscadortexto { margin-left: 0; }
-    }
 
     /* ---------- MÓVIL (hasta 768px) ---------- */
     .hamburguesa {
@@ -361,10 +337,11 @@
 
 
     /* ---------- TABLET (769px - 1024px) ---------- */
-    @media screen and (min-width: 769px) and (max-width: 1024px) {
+    @media screen and (min-width: 769px) and (max-width: 1200px) {
 
       header { 
         padding: 20px 30px; 
+        
       }
       .menu {
         gap: 10px;
@@ -372,11 +349,20 @@
       .menu li a {
          padding: 22px 14px;
        }
-
-      .portada-texto {
-        margin: 10px 40px;
-        max-width: 420px;
+       .portada {
+        background: url(../multimedia/imgInicio.png) no-repeat center;
+        background-size: cover;
       }
+     .portada-texto {
+        position: static;
+        flex: 1;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 60px 40px;
+        background: rgba(13, 32, 24, 0.6);
+      } 
+      .portada-imagen { display: none; }
       .portada h1 {
          font-size: 38px; 
       }
@@ -410,6 +396,8 @@
         align-items: center;
         min-height: 64px;
         padding: 0 100px;
+         flex-wrap: wrap;
+        padding: 12px 25px;
       }
       #logo h2 { font-size: 20px; }
 
