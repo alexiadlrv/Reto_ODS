@@ -22,8 +22,7 @@
                             <li><a href="contenedores.php#nuevo-contenedor-agregar">Añadir contenedor</a></li>
                             <li><a href="editar-lista.php">Editar contenedor</a></li>
                         </ul>
-                    </li>  
-                <li><a href="contacto.php">Contacto</a></li>
+                    <li><a href="contacto.php">Contacto</a></li>
                 </ul>
             </nav>
 
