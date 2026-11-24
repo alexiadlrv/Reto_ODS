@@ -109,7 +109,6 @@
       display: flex;
       align-items: center;
       position: relative;
-    min-height: calc(100vh - 60px);
 
     }
 
@@ -210,15 +209,14 @@
 
 
     .contenedores-ods {
-      display: flex;
-      width: 25%;
-      align-items: center;
-      background-color: #ffffff;
-      border: 1px solid #e2e8f0;
-      border-radius: 12px;
-      padding: 16px;
-      gap: 12px;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); 
+        display: flex;
+        flex: 1;
+        align-items: center;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 16px;
+        gap: 12px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
 
 
@@ -242,6 +240,7 @@
         justify-content: center;
         flex-shrink: 0;
     }
+    
     .imagen-contenedor img {
       width: 80px;
       height: 80px;
@@ -320,3 +319,188 @@
     .tituloConsulta{
       color:white;
     }
+
+    /*RESPONSIVE DE INDEX*/
+
+    
+  /* ---------- TABLET (769px - 1024px) ---------- */
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+
+      header {
+        padding: 20px 30px;
+      }
+      .menu { gap: 10px; }
+      .menu li a { padding: 22px 14px; }
+
+      .portada-texto {
+        margin: 10px 40px;
+        max-width: 420px;
+      }
+      .portada h1 { font-size: 38px; }
+      .etiqueta { font-size: 16px; }
+
+      /* 4 tarjetas ODS -> 2 por fila */
+      .contenedoresHijosods {
+        flex-wrap: wrap;
+      }
+     
+
+      .buscador-contenedor { padding-left: 40px; }
+      .buscadortexto { margin-left: 0; }
+    }
+
+    /* ---------- MÓVIL (hasta 768px) ---------- */
+    .hamburguesa {
+      display: none;
+      background: none;
+      border: 0;
+      color: white;
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+
+    /* ---------- TABLET (769px - 1024px) ---------- */
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+
+      header { 
+        padding: 20px 30px; 
+      }
+      .menu {
+        gap: 10px;
+       }
+      .menu li a {
+         padding: 22px 14px;
+       }
+
+      .portada-texto {
+        margin: 10px 40px;
+        max-width: 420px;
+      }
+      .portada h1 {
+         font-size: 38px; 
+      }
+      .etiqueta {
+         font-size: 16px; 
+      }
+
+      /* ODS: 2 por fila */
+      .contenedoresHijosods { 
+        flex-wrap: wrap;
+       }
+      .contenedores-ods {
+         flex: 1 1 40%;
+       }
+
+      .buscador-contenedor {
+         padding-left: 40px; 
+      }
+      .buscadortexto {
+         margin-left: 0;
+       }
+    }
+    /* ---------- MÓVIL (hasta 768px) ---------- */
+    @media screen and (max-width: 768px) {
+
+      /* Cabecera y menú hamburguesa */
+      header {
+        height: auto;
+        min-height: 64px;
+        flex-wrap: wrap;
+        padding: 12px 25px;
+      }
+      #logo h2 { font-size: 20px; }
+
+      .hamburguesa { display: block; }
+
+      nav { width: 100%; }
+
+      .menu {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        margin-top: 10px;
+      }
+      .menu.abierto { display: flex; }
+      .menu li a { padding: 14px 10px; }
+
+      .submenu {
+        position: static;
+        display: block;
+        box-shadow: none;
+        border-radius: 0;
+        min-width: 0;
+        padding-left: 20px;
+      }
+
+       .portada {
+        background: url(../multimedia/imgInicio.png) no-repeat center;
+        background-size: cover;
+        min-height: 0;
+      }
+
+      .portada-imagen { display: none; }
+
+      .portada-texto {
+        position: static;
+        flex: 1;
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 50px 25px;
+        background: rgba(13, 32, 24, 0.6);
+      }
+
+      .portada h1 { 
+        font-size: 28px;
+      }
+
+      .portada p {
+         font-size: 14px; margin-bottom: 15px;
+      }
+      .etiqueta { 
+        font-size: 14px; 
+      }
+
+      /* ODS: 1 por fila */
+      .contenedorPadreODS { 
+        padding: 40px 25px; 
+      }
+      .contenedoresHijosods { 
+        flex-direction: column; 
+      }
+      .contenedores-ods { 
+        flex: none; 
+      }
+
+
+      /* Vídeo */
+      .seccionVideo { 
+        padding: 30px 25px; 
+      }
+      .textoVideo p { 
+        margin-bottom: 25px; 
+      }
+
+      /* Buscador */
+      .buscador-contenedor {
+        padding: 30px 25px;
+        align-items: center;
+        text-align: center;
+      }
+      .iconoytitulo {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .buscadortexto { 
+        margin-left: 0; 
+      }
+
+      audio { 
+        width: 100%; 
+      }
+    }
+
+    /* RESPONSIVE CONTENEDORES*/
+    
