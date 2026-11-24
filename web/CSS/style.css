@@ -29,12 +29,9 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      height: 64px;
-      padding: 20px;
-      padding-left:100px;
-      padding-right: 200px;
+      min-height: 64px;
+      padding: 0 100px;
     }
-
 
     .logo{width: 30px;}
     span {
@@ -49,17 +46,16 @@
         display: flex;
         gap: 30px ;
         list-style-type: none;
+        align-items: center;
     }
 
 
-    .menu li a{
-        color:white;
-        font-size: 15px;
-        display: block;
-        padding: 22px;
-        text-decoration: none;
-        font-size: 17px;
-        
+    .menu li a {
+      color: white;
+      display: block;
+      padding: 20px 18px;
+      text-decoration: none;
+      font-size: 17px;
     }
     .menu li a:hover,
     .menu li a:focus-visible {
@@ -85,6 +81,7 @@
       box-shadow: 0 8px 16px rgba(0,0,0,0.2);
       z-index: 1000;
       border-radius: 0 0 8px 8px;
+      margin: -1px 0 0 0; 
     }
 
     .menu li:hover .submenu {
@@ -407,10 +404,12 @@
 
       /* Cabecera y menú hamburguesa */
       header {
-        height: auto;
+        background-color: #0d2018;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         min-height: 64px;
-        flex-wrap: wrap;
-        padding: 12px 25px;
+        padding: 0 100px;
       }
       #logo h2 { font-size: 20px; }
 
