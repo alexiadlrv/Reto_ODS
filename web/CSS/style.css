@@ -123,10 +123,13 @@
     }
 
 
+    
     .portada-imagen img {
       width: 100%;
       display: block;
-      min-height: calc(100vh - 60px);
+    }
+     .portada-imagen {
+      flex: 1;            
     }
 
     .etiqueta {
@@ -502,5 +505,8 @@
       }
     }
 
-    /* RESPONSIVE CONTENEDORES*/
+@media screen and (max-width: 360px) {
+    .titulo-banner { font-size: 18pt; }
+    .imagen-contenedores img { width: 100%; }
+}
     
