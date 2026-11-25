@@ -44,7 +44,7 @@ if (strlen($datos['ubicacion']) < 3) {
     $errores[] = 'La ubicación no puede tener más de 100 caracteres.';
 }
 
-$patronFecha = '/^#[0-9a-fA-F]{6}$/'; // No se usa, porque el campo es de fecha
+$patronFecha = '/^\d{4}-\d{2}-\d{2}$/'; 
 $patronColor = '/^#[0-9a-fA-F]{6}$/';
 
 if (!preg_match($patronFecha, $datos['fechaInstalacion'])) {
